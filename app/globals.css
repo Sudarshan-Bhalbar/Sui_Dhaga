@@ -174,7 +174,7 @@ body {
 #categories-page {
   background-color: #f1eff0;
   width: 100vw;
-  height: 400vh;
+  height: 265vh;
   padding-top: 10%;
   position: relative;
 }
@@ -189,41 +189,49 @@ body {
 #categories-page img {
   position: absolute;
   left: 50%;
+  /* bottom: 0%; */
   transform: translate(-50%, -8%);
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
 }
 
 #categories-page-pin-img{
   position: absolute;
-  top: 30%;
-  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #939295;
   width: 12vw;
-  height: 40vh;
-  background-image: url("../app/images/model3.jpg");
+  height: 30vh;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 200%;
+  background-size: cover;
   border: 5px solid #fffff6;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3));
 }
 
 #categories-page .img-1{
-  transform: translate(250%, -40%);
+  top: 60%;
+  left: 12%;
+  background-image: url("../app/images/bottom_wear.jpg");
 }
 #categories-page .img-2{
-  transform: translate(100%, 280%);
+  bottom: 20%;
+  left: 90%;
+  background-image: url("../app/images/Shoes_wear.jpg");
 }
 #categories-page .img-3{
-  transform: translate(-300%, 300%);
+  bottom: 45%;
+  left: 20%;
+  background-image: url("../app/images/outer_wear.jpg");
 }
 #categories-page .img-4{
-  transform: translate(-300%, -50%);
+  bottom: 50%;
+  left: 80%;
+  transform: rotate(35deg);
+  background-image: url("../app/images/accessories.jpg");
 }
 #categories-text-btn-div{
   position: absolute;
   left: 8%;
-  top: 18%;
+  top: 25%;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -245,7 +253,7 @@ body {
 }
 #categories-text-r-div{
   position: absolute;
-  top: 18%;
+  top: 25%;
   right: 8%;
 }
 #categories-text-r-div p{
