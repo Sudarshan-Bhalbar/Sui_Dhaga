@@ -7,7 +7,7 @@ const page = () => {
     <>
       <div id="categories-page">
         <h1 className="no-select">Categories</h1>
-        <Image src={model} width={1000} height={1000}/>
+        <Image src={model} objectFit="cover" objectPosition="center" alt=""/>
         <div id="categories-page-pin-img" className="img-1"></div>
         <div id="categories-page-pin-img" className="img-2"></div>
         <div id="categories-page-pin-img" className="img-3"></div>
