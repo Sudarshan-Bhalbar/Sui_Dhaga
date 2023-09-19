@@ -1,8 +1,8 @@
-import React from 'react'
+import Styles from "./style.module.css"
 
 const ShopPage = () => {
   return (
-    <div>ShopPage</div>
+    <div id={Styles.shop_page}>ShopPage</div>
   )
 }
 

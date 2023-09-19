@@ -48,13 +48,7 @@ const Shop = () => {
         <h1 className="no-select">New Arrivals</h1>
         <div id="shop-page-elements">
           {Images.map((e, index) => {
-            const {
-              Id,
-              ItemName,
-              Itemtype,
-              ItemSize,
-              ItemPrice,
-            } = e;
+           
             return (
               <div id="shop-elements" key={index}>
                 <FaHeart

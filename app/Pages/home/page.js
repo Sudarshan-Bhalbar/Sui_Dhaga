@@ -1,6 +1,11 @@
+"use client"
 import Image from "next/image";
 import Model from "@/app/images/m.svg";
 import { BsArrowRight } from "react-icons/bs";
+import dynamic from "next/dynamic";
+const Categories = dynamic(()=>import("@/app/Components/Categories"))
+const ShopPage = dynamic(()=>import("@/app/Components/Shop"))
+const About = dynamic(()=>import("@/app/Components/About"))
 
 const Home = () => {
   return (
@@ -17,6 +22,9 @@ const Home = () => {
         <div id="landing-page-pin-pic">
         </div>
       </div>
+        <Categories/>
+        <ShopPage/>
+        <About/>
     </>
   );
 };

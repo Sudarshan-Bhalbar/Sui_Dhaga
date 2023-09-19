@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 import Carousel_text from './Carousel';
-
 const AboutPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
