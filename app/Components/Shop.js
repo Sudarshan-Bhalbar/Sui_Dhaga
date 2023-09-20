@@ -3,7 +3,8 @@ import { FaHeart } from "react-icons/fa";
 import { CgShoppingCart } from "react-icons/cg";
 import { useState } from "react";
 import Images from "@/app/Components/Images";
-import Img1 from "@/app/images/model2.svg"
+import Img1 from "@/app/images/model2.svg";
+import Styles from "@/app/Styles/shoppage.module.css";
 
 const Shop = () => {
   const [likes, setLikes] = useState(Array(8).fill(false));
@@ -30,36 +31,36 @@ const Shop = () => {
 
   return (
     <>
-      <div id="shop-page">
-        <h1 className="no-select">Shop</h1>
-        <div id="shop-image-div">
-          <div id="Image-div">
+      <div id={Styles.shop_page}>
+        <h1 className={Styles.no_select}>Shop</h1>
+        <div id={Styles.shop_image_div}>
+          <div id={Styles.Image_div}>
             <Image  src={Img1} layout="fill" alt="img" />
           </div>
-          <div id="shop-text" >
-            <p className="no-select">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate molestiae delectus iusto deleniti!</p>
-            <div id="shop-Btn" className="no-select">Shop Now</div>
+          <div id={Styles.shop_text} >
+            <p className={Styles.no_select}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate molestiae delectus iusto deleniti!</p>
+            <div id={Styles.shop_Btn} className={Styles.no_select}>Shop Now</div>
           </div>
-          <div id="shop-highlight-text" >
-            <p className="no-select">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, consequuntur iure. Quo, accusamus?</p>
+          <div id={Styles.shop_highlight_text} >
+            <p className={Styles.no_select}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, consequuntur iure. Quo, accusamus?</p>
             
           </div>
         </div>
-        <h1 className="no-select">New Arrivals</h1>
-        <div id="shop-page-elements">
+        <h1 className={Styles.no_select}>New Arrivals</h1>
+        <div id={Styles.shop_page_elements}>
           {Images.map((e, index) => {
            
             return (
-              <div id="shop-elements" key={index}>
+              <div id={Styles.shop_elements} key={index}>
                 <FaHeart
-                  id="heart"
+                  id={Styles.heart}
                   onClick={() => handleClick(index)}
                   style={{
                     color: likes[index] ? "#ff00008e" : "#a2a2d2",
                     zIndex: 99,
                   }}
                 />
-                  <div id="image-container"
+                  <div id={Styles.image_container}
                   onMouseOver={() => handleMouseOver(index)}
                   onMouseOut={() => handleMouseOut(index)}
                   >
@@ -69,8 +70,8 @@ const Shop = () => {
                       layout="fill"
                     />
                   </div>
-                  <div id="cart-btn">
-                    <CgShoppingCart id="cart-icon"/>
+                  <div id={Styles.cart_btn}>
+                    <CgShoppingCart id={Styles.cart_icon}/>
                   </div>
               </div>
             );
