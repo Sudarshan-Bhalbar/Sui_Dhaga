@@ -28,6 +28,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1% 8%;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
 }
 #nav-l {
   width: 50%;
@@ -75,6 +78,8 @@ body {
 }
 
 #main-landing-page #model-image {
+  width: 50%;
+  height: 90%;
   position: absolute;
   bottom: 0%;
   left: 55%;
@@ -103,7 +108,7 @@ body {
 #main-desc-text {
   width: 25vw;
   font-size: 1.5vw;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: cursive;
   display: flex;
   flex-direction: column;
   gap: 5vh;
@@ -138,6 +143,9 @@ body {
 }
 #landing-page-pin-pic {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 80%;
   right: 5%;
   rotate: 15deg;
@@ -189,12 +197,13 @@ body {
 #categories-page img {
   position: absolute;
   left: 50%;
-  /* bottom: 0%; */
+  width: 80%;
+  height: 80%;
   transform: translate(-50%, -8%);
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
 }
 
-#categories-page-pin-img{
+#categories-page-pin-img {
   position: absolute;
   transform: translate(-50%, -50%);
   background-color: #939295;
@@ -207,28 +216,28 @@ body {
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3));
 }
 
-#categories-page .img-1{
+#categories-page .img-1 {
   top: 60%;
   left: 12%;
   background-image: url("../app/images/bottom_wear.jpg");
 }
-#categories-page .img-2{
+#categories-page .img-2 {
   bottom: 20%;
   left: 90%;
   background-image: url("../app/images/Shoes_wear.jpg");
 }
-#categories-page .img-3{
+#categories-page .img-3 {
   bottom: 45%;
   left: 20%;
   background-image: url("../app/images/outer_wear.jpg");
 }
-#categories-page .img-4{
+#categories-page .img-4 {
   bottom: 50%;
   left: 80%;
   transform: rotate(35deg);
   background-image: url("../app/images/accessories.jpg");
 }
-#categories-text-btn-div{
+#categories-text-btn-div {
   position: absolute;
   left: 8%;
   top: 25%;
@@ -237,30 +246,312 @@ body {
   gap: 12px;
   width: 25vw;
   height: fit-content;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: cursive;
 }
-#categories-text-btn-div p{
+#categories-text-btn-div p {
   color: #666767;
   width: 25vw;
   font-size: 1.5vw;
 }
-#categories-shop-btn{
-  background-color: #5F60B9;
-  color: #FFFFFF;
+#categories-shop-btn {
+  background-color: #5f60b9;
+  color: #ffffff;
   width: fit-content;
   height: fit-content;
   padding: 2% 3%;
 }
-#categories-text-r-div{
+#categories-text-r-div {
   position: absolute;
   top: 25%;
   right: 8%;
 }
-#categories-text-r-div p{
+#categories-text-r-div p {
   font-family: CorelDraw;
   line-height: 80%;
   color: #000;
   text-align: end;
   width: 20vw;
   font-size: 2vw;
+}
+
+/* Shop Page */
+
+#shop-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 2%;
+  color: #ff00008e;
+  background-color: #f1eff0;
+  width: 100vw;
+  height: 360vh;
+  overflow-y: scroll;
+}
+#shop-page h1 {
+  text-align: center;
+  color: #a2a2d2;
+  font-size: 10vw;
+  font-family: CorelDraw;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3));
+}
+#shop-image-div {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: #522929; */
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3));
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+#shop-image-div #Image-div {
+  width: 40%;
+  /* background-color: #5F60B9; */
+  height: 100%;
+}
+#shop-text {
+  position: absolute;
+  bottom: 25%;
+  left: 10%;
+  width: 20%;
+  height: fit-content;
+  /* background-color: #666767; */
+}
+#shop-text #shop-Btn {
+  width: fit-content;
+  height: fit-content;
+  background-color: #5f60b9;
+  border-radius: 5%;
+  margin-top: 10%;
+  padding: 5%;
+  font-family: cursive;
+  color: #f1eff0;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3));
+}
+#shop-text p {
+  font-size: 1.5vw;
+  font-family: cursive;
+  color: #221f20;
+}
+#shop-highlight-text {
+  width: 20%;
+  height: fit-content;
+  position: absolute;
+  right: 10%;
+  text-align: right;
+}
+#shop-highlight-text p {
+  font-size: 1.5vw;
+  font-family: CorelDraw;
+  color: #221f20;
+}
+#shop-page #shop-page-elements {
+  /* background-color: #666767; */
+  width: 100vw;
+  height: 80vh;
+  padding: 0% 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+}
+#shop-page #shop-elements {
+  position: relative;
+  background-color: #ffffff;
+  width: 250px;
+  height: 350px;
+  padding: 1%;
+  border-radius: 3%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+#shop-elements #image-div {
+  width: 100%;
+  height: 90%;
+}
+#shop-elements #image-container {
+  height: 100%;
+  width: 100%;
+}
+#image-container img {
+  border-radius: 1.8%;
+}
+#shop-elements h2 {
+  color: #522929;
+  font-weight: 700;
+  letter-spacing: 0.2vw;
+  margin: 1% 0%;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1vw;
+}
+#shop-elements p {
+  color: #adadad;
+  margin: 1% 0%;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1vw;
+}
+#shop-elements #heart {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 2vw;
+  height: 4vh;
+  z-index: 99;
+}
+#shop-elements #cart-btn {
+  background-color: #adadad;
+  padding: 1%;
+  z-index: 9;
+  border-radius: 0% 100% 0% 0%;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 25%;
+  height: 20%;
+}
+
+#cart-btn #cart-icon {
+  width: 50%;
+  height: 50%;
+  color: white;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+
+/* About Section */
+
+#About-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f1eff0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+}
+#About-page h1 {
+  margin-top: 10%;
+  text-align: center;
+  color: #a2a2d2;
+  font-size: 5rem;
+  font-family: CorelDraw;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3));
+}
+#About-page h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #000000;
+}
+#Carousel {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 300px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.SlArrowLeft,
+.SlArrowRight {
+  /* position: absolute; */
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+  /* background-color: #5f60b9; */
+  width: 100px;
+  height: 100px;
+  color: #939295;
+  cursor: pointer;
+}
+#Carousel-text {
+  width: 60%;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  /* background-color: #522929; */
+}
+#Carousel-text p {
+  width: 70%;
+  color: #000;
+  margin-bottom: 10px;
+}
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0px 10px;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
+
+/* Footer  */
+
+#footer{
+  width: 100vw;
+  height: 60vh;
+  background-color: #f1eff0;
+  padding: 0% 15%;
+}
+#footer-main{
+  width: 100%;
+  height: 100%;
+  /* background-color: aquamarine; */
+}
+#footer-image-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  width: 100%;
+  height: 60%;
+  background: rgb(162,162,210);
+  background: linear-gradient(0deg, rgba(241,239,240,1) 60%, rgba(162,162,210,1) 40%); 
+  
+}
+#footer-image-container{
+  width: 15%;
+  height: 60%;
+  /* background-color: #221f20; */
+  position: relative;
+}
+#footer-links{
+  /* background-color: red; */
+  width: 100%;
+  height: 5%;
+  padding: 0% 10%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5%;
+  font-size: 1.2rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #222021;
 }
