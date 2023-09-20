@@ -2,7 +2,8 @@
 import { motion } from "framer-motion";
 import { RiMenu3Line } from "react-icons/ri";
 import { AnimatePresence } from "framer-motion";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import Styles from "@/app/Styles/navbar.module.css";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,28 +18,34 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
 
   return (
     <>
       <AnimatePresence>
-        <motion.div  id="Navbar" className={`navbar fixed z-50 ${isScrolled ? 'navbar--scrolled' : ''}`}
-      initial={{ backgroundColor: 'transparent' }}
-      animate={{ backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.5)' : 'transparent' }}
-      transition={{ duration: 0.3 }}>
-          <div id="nav-l" >
-            <motion.h3>
-              SUI DHAGA
-            </motion.h3>
+        <motion.div
+          id={Styles.Navbar}
+          className={`navbar fixed z-50 ${
+            isScrolled ? "navbar--scrolled" : ""
+          }`}
+          initial={{ backgroundColor: "transparent" }}
+          animate={{
+            backgroundColor: isScrolled
+              ? "rgba(255, 255, 255, 0.5)"
+              : "transparent",
+          }}
+          transition={{ duration: 0.3 }}
+        >
+          <div id={Styles.nav_l}>
+            <motion.h3>SUI DHAGA</motion.h3>
           </div>
-          <div id="nav-r">
-            <RiMenu3Line id="nav-r-menu-bar" />
+          <div id={Styles.nav_r}>
+            <RiMenu3Line id={Styles.nav_r_menu_bar} />
           </div>
         </motion.div>
       </AnimatePresence>

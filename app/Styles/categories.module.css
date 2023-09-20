@@ -1,0 +1,100 @@
+.no_select::selection {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  -moz-user-select: none;
+}
+#categories_page {
+  background-color: #f1eff0;
+  width: 100vw;
+  height: 265vh;
+  padding-top: 10%;
+  position: relative;
+}
+#categories_page h1 {
+  text-align: center;
+  color: #a2a2d2;
+  font-size: 15vw;
+  font-family: CorelDraw;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3));
+}
+
+#categories_page img {
+  position: absolute;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%, -8%);
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+}
+
+#categories_page_pin_img {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: #939295;
+  width: 12vw;
+  height: 30vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 5px solid #fffff6;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3));
+}
+
+#categories_page .img_1 {
+  top: 60%;
+  left: 12%;
+  background-image: url("../images/bottom_wear.jpg");
+}
+#categories_page .img_2 {
+  bottom: 20%;
+  left: 90%;
+  background-image: url("../images/Shoes_wear.jpg");
+}
+#categories_page .img_3 {
+  bottom: 45%;
+  left: 20%;
+  background-image: url("../images/outer_wear.jpg");
+}
+#categories_page .img_4 {
+  bottom: 50%;
+  left: 80%;
+  transform: rotate(35deg);
+  background-image: url("../images/accessories.jpg");
+}
+#categories_text_btn_div {
+  position: absolute;
+  left: 8%;
+  top: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 25vw;
+  height: fit-content;
+  font-family: cursive;
+}
+#categories_text_btn_div p {
+  color: #666767;
+  width: 25vw;
+  font-size: 1.5vw;
+}
+#categories_shop_btn {
+  background-color: #5f60b9;
+  color: #ffffff;
+  width: fit-content;
+  height: fit-content;
+  padding: 2% 3%;
+}
+#categories_text_r_div {
+  position: absolute;
+  top: 25%;
+  right: 8%;
+}
+#categories_text_r_div p {
+  font-family: CorelDraw;
+  line-height: 80%;
+  color: #000;
+  text-align: end;
+  width: 20vw;
+  font-size: 2vw;
+}

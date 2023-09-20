@@ -1,0 +1,23 @@
+#sidebar_wraper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+#main_circle {
+    width: 75vw;
+    height: 75vw;
+    background-color: aliceblue;
+    border-radius: 50%;
+    background-origin: content-box;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+  }
+  
