@@ -144,3 +144,13 @@ body {
   background-color: #333;
 }
 
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 999;
+  overflow: hidden;
+}

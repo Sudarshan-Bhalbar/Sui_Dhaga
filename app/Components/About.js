@@ -20,7 +20,6 @@ const AboutPage = () => {
 
   const handleDotClick = (index) => {
     setCurrentIndex(index);
-    // console.log(Carousel_text);
   };
 
   return (
@@ -28,11 +27,14 @@ const AboutPage = () => {
       <h1 className={Styles.no_select}>About Us</h1>
       <h3 className={Styles.no_select}>WORLD'S NO ONE PREMIUM CLOTHES</h3>
       <div id={Styles.Carousel}>
-        <SlArrowLeft className={Styles.SlArrowLeft} onClick={() => handlePrevious()} />
+        <SlArrowLeft
+          className={Styles.SlArrowLeft}
+          onClick={() => handlePrevious()}
+        />
         <div id={Styles.Carousel_text}>
           <p className={Styles.no_select}>{Carousel_text[currentIndex]}</p>
-          <div className={Styles.indicator} >
-            {Carousel_text.map((index) => (
+          <div className={Styles.indicator}>
+            {Carousel_text.map((_, index) => (
               <div
                 key={index}
                 className={`dot ${currentIndex === index ? "active" : ""}`}
@@ -41,7 +43,10 @@ const AboutPage = () => {
             ))}
           </div>
         </div>
-        <SlArrowRight className={Styles.SlArrowRight} onClick={() => handleNext()} />
+        <SlArrowRight
+          className={Styles.SlArrowRight}
+          onClick={() => handleNext()}
+        />
       </div>
     </div>
   );

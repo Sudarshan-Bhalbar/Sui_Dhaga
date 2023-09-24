@@ -1,23 +1,122 @@
+#pointer_none{
+  -moz-user-select: none;
+}
 #sidebar_wraper {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: fixed;
   z-index: 99;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  overflow: hidden;
 }
 #main_circle {
-    width: 75vw;
-    height: 75vw;
-    background-color: aliceblue;
-    border-radius: 50%;
-    background-origin: content-box;
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    transform: translate(-50%, -50%);
-  }
-  
+  width: 150vh;
+  height: 150vh;
+  border-radius: 50%;
+  position: relative;
+  top: -20vh;
+  left: -80vh;
+  border: 1px solid #cacaca;
+}
+#main_circle p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50deg, -50deg);
+}
+#Close_btn {
+  color: #a6a5a5;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 3vw;
+  height: 3vw;
+}
+.stripe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, -50%);
+  width: 100%;
+  height: 60px;
+  transform-origin: 0% 50%;
+  display: flex;
+}
+.strip1 {
+  transform: translate(0%, -50%) rotate(-30deg);
+}
+.strip2 {
+  transform: translate(0%, -50%) rotate(-15deg);
+}
+.strip3 {
+  transform: translate(0%, -50%) rotate(0deg);
+}
+.strip4 {
+  transform: translate(0%, -50%) rotate(15deg);
+}
+.strip5 {
+  transform: translate(0%, -50%) rotate(30deg);
+}
+
+.first {
+  width: 50%;
+  height: 100%;
+}
+.second #smdot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #cacaca;
+  position: absolute;
+  top: 50%;
+  left: -0.8%;
+  transform: translate(-0.8%,-50%);
+
+}
+#smdot.active {
+  background-color: rgba(0, 0, 0, 0.688);
+}
+.second {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  /* background-color: burlywood; */
+  font-family: sans-serif;
+  font-size: 3vw;
+  display: flex;
+  padding-left: 2%;
+  gap: 20%;
+  color: #cacaca;
+}
+.second h2 {
+  font-family: CorelDraw;
+}
+#dot_btn {
+  position: absolute;
+  right: 10%;
+  top: 25%;
+  width: fit-content;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15%;
+}
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.dot.active {
+  background-color: rgba(0, 0, 0, 0.588);
+}
+.dot:not(.active) {
+  background-color: #cacaca;
+}
+
+.active {
+  color: rgba(0, 0, 0, 0.688);
+}
