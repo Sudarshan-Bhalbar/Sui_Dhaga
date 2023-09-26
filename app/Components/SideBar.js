@@ -1,182 +1,262 @@
-import React, { useState } from "react";
-import Styles from "@/app/Styles/sidebar.module.css";
-import { TfiClose } from "react-icons/tfi";
-import { motion } from "framer-motion";
+"use client";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import styles from "@/app/Styles/sidebar.module.css";
+
 const SideBar = ({ toggleSidebar }) => {
-  const [rotation, setRotation] = useState(0);
-  const [activeDotIndex, setActiveDotIndex] = useState(2);
+  const circleRef = useRef(null);
+  const rotationValues = [0, 15, 30, 45, 60];
+  const rotationSteps = 60 / rotationValues.length;
+  const [activeDotIndex, setActiveDotIndex] = useState(0);
 
   const handleDotClick = (index) => {
-    const angles = [30, 15, 0, -15, -30];
-    setRotation(angles[index]);
+    const rotationValue = rotationValues[index];
+    gsap.to(circleRef.current, {
+      rotation: rotationValue,
+      duration: 1,
+      ease: "easeIn",
+    });
     setActiveDotIndex(index);
   };
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const clamp = (value, min, max) => {
+      return Math.min(Math.max(value, min), max);
+    };
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#circle-wrapper",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+      },
+    });
+
+    rotationValues.map((value, index) => {
+      const start = index * rotationSteps;
+      const end = start + rotationSteps;
+
+      tl.to(circleRef.current, {
+        rotation: (i) => {
+          const rotationValue = clamp(value, 0, 60);
+          return rotationValue;
+        },
+        duration: 1,
+        ease: "easeIn",
+        start: `+=${start}`,
+        end: `+=${end}`,
+      });
+    });
+  }, []);
+
   return (
     <>
-      <div id={Styles.sidebar_wraper}>
-        <motion.div
-          id={Styles.main_circle}
-          style={{ rotate: `${rotation}deg`, transition: "easeInOut 1000s" }}
-        >
-          <div className={`${Styles.stripe} ${Styles.strip1}`}>
-            <div className={Styles.first}></div>
-            <div className={Styles.second}>
+      <div id={styles.circle_wrapper}>
+        <div id={styles.circle} ref={circleRef}>
+          <div className={`${styles.stripe} ${styles.strip1}`}>
+            <div className={styles.first}></div>
+            <div className={styles.second}>
               <div
-                id={Styles.smdot}
-                className={activeDotIndex === 0 ? Styles.active : ""}
+                id={styles.smdot}
+                className={
+                  activeDotIndex === 0
+                    ? `${styles.active} ${styles.opacity100}`
+                    : `${styles.opacity50}`
+                }
               ></div>
               <h2
-                id={Styles.pointer_none}
-                onClick={() => handleDotClick(0)}
-                className={activeDotIndex === 0 ? Styles.active : ""}
+                id={styles.pointer_none}
+                className={
+                  activeDotIndex === 0
+                    ? `${styles.active} ${styles.opacity100}`
+                    : `${styles.opacity50}`
+                }
               >
                 01
               </h2>
               <h1
-                id={Styles.pointer_none}
-                className={`${Styles.h1_1} ${
-                  activeDotIndex === 0 ? Styles.active : ""
-                }`}
+                id={styles.pointer_none}
+                className={
+                  activeDotIndex === 0
+                    ? `${styles.active} ${styles.opacity100}`
+                    : `${styles.opacity50}`
+                }
                 onClick={() => handleDotClick(0)}
               >
-                HOME
+                <Link href={"/Pages/Test"}>HOME</Link>
               </h1>
             </div>
           </div>
-          <div className={`${Styles.stripe} ${Styles.strip2}`}>
-            <div className={Styles.first}></div>
-            <div className={Styles.second}>
+          <div className={`${styles.stripe} ${styles.strip2}`}>
+            <div className={styles.first}></div>
+            <div className={styles.second}>
               <div
-                id={Styles.smdot}
-                className={activeDotIndex === 1 ? Styles.active : ""}
+                id={styles.smdot}
+                className={
+                  activeDotIndex === 1
+                    ? `${styles.active} ${styles.opacity100}`
+                    : `${styles.opacity50}`
+                }
               ></div>
-
               <h2
-                id={Styles.pointer_none}
-                onClick={() => handleDotClick(1)}
-                className={activeDotIndex === 1 ? Styles.active : ""}
+                id={styles.pointer_none}
+                className={
+                  activeDotIndex === 1
+                    ? `${styles.active} ${styles.opacity100}`
+                    : `${styles.opacity50}`
+                }
               >
                 02
               </h2>
               <h1
-                id={Styles.pointer_none}
-                className={`${Styles.h1_2} ${
-                  activeDotIndex === 1 ? Styles.active : ""
-                }`}
+                id={styles.pointer_none}
+                className={
+                  activeDotIndex === 1
+                    ? `${styles.active} ${styles.opacity100}`
+                    : `${styles.opacity50}`
+                }
                 onClick={() => handleDotClick(1)}
               >
                 SHOP
               </h1>
             </div>
           </div>
-          <div className={`${Styles.stripe} ${Styles.strip3}`}>
-            <div className={Styles.first}></div>
-            <div className={Styles.second}>
+          <div className={`${styles.stripe} ${styles.strip3}`}>
+            <div className={styles.first}></div>
+            <div className={styles.second}>
               <div
-                id={Styles.smdot}
-                className={activeDotIndex === 2 ? Styles.active : ""}
+                id={styles.smdot}
+                className={
+                  activeDotIndex === 2
+                    ? `${styles.active} ${styles.opacity100}`
+                    : `${styles.opacity50}`
+                }
               ></div>
               <h2
-                id={Styles.pointer_none}
-                onClick={() => handleDotClick(2)}
-                className={activeDotIndex === 2 ? Styles.active : ""}
+                id={styles.pointer_none}
+                className={
+                  activeDotIndex === 2
+                    ? `${styles.active} ${styles.opacity100}`
+                    : `${styles.opacity50}`
+                }
               >
                 03
               </h2>
               <h1
-                id={Styles.pointer_none}
-                className={`${Styles.h1_3} ${
-                  activeDotIndex === 2 ? Styles.active : ""
-                }`}
+                id={styles.pointer_none}
+                className={
+                  activeDotIndex === 2
+                    ? `${styles.active} ${styles.opacity100}`
+                    : `${styles.opacity50}`
+                }
                 onClick={() => handleDotClick(2)}
               >
                 CATEGORIES
               </h1>
             </div>
           </div>
-          <div className={`${Styles.stripe} ${Styles.strip4}`}>
-            <div className={Styles.first}></div>
-            <div className={Styles.second}>
+          <div className={`${styles.stripe} ${styles.strip4}`}>
+            <div className={styles.first}></div>
+            <div className={styles.second}>
               <div
-                id={Styles.smdot}
-                className={activeDotIndex === 3 ? Styles.active : ""}
+                id={styles.smdot}
+                className={
+                  activeDotIndex === 3
+                    ? `${styles.active} ${styles.opacity100}`
+                    : `${styles.opacity50}`
+                }
               ></div>
-
               <h2
-                id={Styles.pointer_none}
-                onClick={() => handleDotClick(3)}
-                className={activeDotIndex === 3 ? Styles.active : ""}
+                id={styles.pointer_none}
+                className={
+                  activeDotIndex === 3
+                    ? `${styles.active} ${styles.opacity100}`
+                    : `${styles.opacity50}`
+                }
               >
                 04
               </h2>
               <h1
-                id={Styles.pointer_none}
-                className={`${Styles.h1_4} ${
-                  activeDotIndex === 3 ? Styles.active : ""
-                }`}
+                id={styles.pointer_none}
+                className={
+                  activeDotIndex === 3
+                    ? `${styles.active} ${styles.opacity100}`
+                    : `${styles.opacity50}`
+                }
                 onClick={() => handleDotClick(3)}
               >
                 NEW ARRIVALS
               </h1>
             </div>
           </div>
-          <div className={`${Styles.stripe} ${Styles.strip5}`}>
-            <div className={Styles.first}></div>
-            <div className={Styles.second}>
+          <div className={`${styles.stripe} ${styles.strip5}`}>
+            <div className={styles.first}></div>
+            <div className={styles.second}>
               <div
-                id={Styles.smdot}
-                className={activeDotIndex === 4 ? Styles.active : ""}
+                id={styles.smdot}
+                className={
+                  activeDotIndex === 4
+                    ? `${styles.active} ${styles.opacity100}`
+                    : `${styles.opacity50}`
+                }
               ></div>
-
               <h2
-                id={Styles.pointer_none}
-                onClick={() => handleDotClick(4)}
-                className={activeDotIndex === 4 ? Styles.active : ""}
+                id={styles.pointer_none}
+                className={
+                  activeDotIndex === 4
+                    ? `${styles.active} ${styles.opacity100}`
+                    : `${styles.opacity50}`
+                }
               >
                 05
               </h2>
               <h1
-                id={Styles.pointer_none}
-                className={`${Styles.h1_5} ${
-                  activeDotIndex === 4 ? Styles.active : ""
-                }`}
+                id={styles.pointer_none}
+                className={
+                  activeDotIndex === 4
+                    ? `${styles.active} ${styles.opacity100}`
+                    : `${styles.opacity50}`
+                }
                 onClick={() => handleDotClick(4)}
               >
                 ABOUT US
               </h1>
             </div>
           </div>
-        </motion.div>
-        <TfiClose id={Styles.Close_btn} onClick={toggleSidebar} />
-        <div id={Styles.dot_btn}>
+        </div>
+        <div id={styles.dot_btn}>
           <div
-            className={`${Styles.dot} ${
-              activeDotIndex === 0 ? Styles.active : ""
+            className={`${styles.dot} ${
+              activeDotIndex === 0 ? styles.active : ""
             }`}
             onClick={() => handleDotClick(0)}
           ></div>
           <div
-            className={`${Styles.dot} ${
-              activeDotIndex === 1 ? Styles.active : ""
+            className={`${styles.dot} ${
+              activeDotIndex === 1 ? styles.active : ""
             }`}
             onClick={() => handleDotClick(1)}
           ></div>
           <div
-            className={`${Styles.dot} ${
-              activeDotIndex === 2 ? Styles.active : ""
+            className={`${styles.dot} ${
+              activeDotIndex === 2 ? styles.active : ""
             }`}
             onClick={() => handleDotClick(2)}
           ></div>
           <div
-            className={`${Styles.dot} ${
-              activeDotIndex === 3 ? Styles.active : ""
+            className={`${styles.dot} ${
+              activeDotIndex === 3 ? styles.active : ""
             }`}
             onClick={() => handleDotClick(3)}
           ></div>
           <div
-            className={`${Styles.dot} ${
-              activeDotIndex === 4 ? Styles.active : ""
+            className={`${styles.dot} ${
+              activeDotIndex === 4 ? styles.active : ""
             }`}
             onClick={() => handleDotClick(4)}
           ></div>

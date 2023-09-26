@@ -31,10 +31,11 @@ const Navbar = () => {
     if (isSidebarOpen) {
       // Sidebar is open, so enable scrolling
       document.body.style.overflow = "auto";
-    } else {
-      // Sidebar is closed, so disable scrolling
-      document.body.style.overflow = "hidden";
-    }
+    } 
+    // else {
+    //   // Sidebar is closed, so disable scrolling
+    //   // document.body.style.overflow = "hidden";
+    // }
     setIsSidebarOpen(!isSidebarOpen);
   };
 

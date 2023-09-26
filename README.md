@@ -40,3 +40,6 @@ Installation
 
 Reference For UI part
 1. https://dribbble.com/shots/21043752-Landing-page-for-fashion-store?utm_source=Clipboard_Shot&utm_campaign=Daliyang&utm_content=Landing%20page%20for%20fashion%20store&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=Daliyang&utm_content=Landing%20page%20for%20fashion%20store&utm_medium=Social_Share
+
+
+<!-- div className={`${Styles.stripe} ${Styles.strip4}`}> -->
