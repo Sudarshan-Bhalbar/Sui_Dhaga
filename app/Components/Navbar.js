@@ -1,5 +1,5 @@
 "use client";
-import { easeInOut, motion } from "framer-motion";
+import { easeInOut, motion, stagger } from "framer-motion";
 import { RiMenu3Line } from "react-icons/ri";
 import { AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -18,7 +18,9 @@ const Navbar = () => {
       } else {
         setIsScrolled(false);
       }
+      // console.log(scrollTop);
     };
+
 
     window.addEventListener("scroll", handleScroll);
 
@@ -32,10 +34,10 @@ const Navbar = () => {
       // Sidebar is open, so enable scrolling
       document.body.style.overflow = "auto";
     } 
-    // else {
-    //   // Sidebar is closed, so disable scrolling
-    //   // document.body.style.overflow = "hidden";
-    // }
+    else {
+      // Sidebar is closed, so disable scrolling
+      document.body.style.overflow = "hidden";
+    }
     setIsSidebarOpen(!isSidebarOpen);
   };
 
@@ -67,10 +69,10 @@ const Navbar = () => {
         {isSidebarOpen && (
           <motion.div
             className="sidebar"
-            initial={{ x: "100vw", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: "100vw", opacity: 0 }}
-            transition={{ duration: 0.5, ease: easeInOut }}
+            initial={{ x: "100vw"}}
+            animate={{ x: 0}}
+            exit={{ x: "100vw"}}
+            transition={{ duration: 0.5, ease: easeInOut, delayChildren:stagger(0.5) }}
           >
             <SideBar toggleSidebar={toggleSidebar} />
           </motion.div>

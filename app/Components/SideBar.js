@@ -4,6 +4,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import styles from "@/app/Styles/sidebar.module.css";
+import { AnimatePresence, easeInOut, motion, stagger } from "framer-motion";
+import { RxCross1 } from "react-icons/rx";
+import { animate } from "framer-motion";
 
 const SideBar = ({ toggleSidebar }) => {
   const circleRef = useRef(null);
@@ -32,15 +35,13 @@ const SideBar = ({ toggleSidebar }) => {
       scrollTrigger: {
         trigger: "#circle-wrapper",
         start: "top top",
-        end: "bottom bottom",
-        scrub: true,
+        end: "bottom bottom"
       },
     });
 
     rotationValues.map((value, index) => {
       const start = index * rotationSteps;
       const end = start + rotationSteps;
-
       tl.to(circleRef.current, {
         rotation: (i) => {
           const rotationValue = clamp(value, 0, 60);
@@ -54,22 +55,63 @@ const SideBar = ({ toggleSidebar }) => {
     });
   }, []);
 
+  // Amimation
+
   return (
     <>
-      <div id={styles.circle_wrapper}>
+      <motion.div
+        id={styles.circle_wrapper}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: easeInOut, duration: 1}}
+      >
+        <motion.div
+          initial={{ rotate: 180, scale: 2 }}
+          whileInView={{ rotate: 0, scale: [1, 1.5, 1] }}
+          whileHover={{ rotate: 360, scale: 1.2 }}
+          onHoverStart={(e) => {}}
+          onHoverEnd={(e) => {}}
+          transition={{
+            ease: easeInOut,
+            duration: 0.1,
+            type: "spring",
+            damping: 50,
+          }}
+          id={styles.Close_btn}
+          onClick={toggleSidebar}
+        >
+          <RxCross1 className={styles.cross} />{" "}
+        </motion.div>
+
         <div id={styles.circle} ref={circleRef}>
           <div className={`${styles.stripe} ${styles.strip1}`}>
             <div className={styles.first}></div>
             <div className={styles.second}>
-              <div
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  ease: easeInOut,
+                  duration: 0.1,
+                  type: "spring",
+                  damping: 10,
+                }}
                 id={styles.smdot}
                 className={
                   activeDotIndex === 0
                     ? `${styles.active} ${styles.opacity100}`
                     : `${styles.opacity50}`
                 }
-              ></div>
-              <h2
+              ></motion.div>
+              <motion.h2
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  ease: easeInOut,
+                  duration: 0.1,
+                  type: "spring",
+                  damping: 10,
+                }}
                 id={styles.pointer_none}
                 className={
                   activeDotIndex === 0
@@ -78,8 +120,19 @@ const SideBar = ({ toggleSidebar }) => {
                 }
               >
                 01
-              </h2>
-              <h1
+              </motion.h2>
+              <motion.h1
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                whileHover={{ scale: 1.2 }}
+                onHoverStart={(e) => {}}
+                onHoverEnd={(e) => {}}
+                transition={{
+                  ease: easeInOut,
+                  duration: 0.1,
+                  type: "spring",
+                  damping: 10,
+                }}
                 id={styles.pointer_none}
                 className={
                   activeDotIndex === 0
@@ -88,22 +141,40 @@ const SideBar = ({ toggleSidebar }) => {
                 }
                 onClick={() => handleDotClick(0)}
               >
-                <Link href={"/Pages/Test"}>HOME</Link>
-              </h1>
+                <Link href={"/"} onClick={toggleSidebar}>
+                  HOME
+                </Link>
+              </motion.h1>
             </div>
           </div>
           <div className={`${styles.stripe} ${styles.strip2}`}>
             <div className={styles.first}></div>
             <div className={styles.second}>
-              <div
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  ease: easeInOut,
+                  duration: 0.1,
+                  type: "spring",
+                  damping: 10,
+                }}
                 id={styles.smdot}
                 className={
                   activeDotIndex === 1
                     ? `${styles.active} ${styles.opacity100}`
                     : `${styles.opacity50}`
                 }
-              ></div>
-              <h2
+              ></motion.div>
+              <motion.h2
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  ease: easeInOut,
+                  duration: 0.1,
+                  type: "spring",
+                  damping: 10,
+                }}
                 id={styles.pointer_none}
                 className={
                   activeDotIndex === 1
@@ -112,8 +183,19 @@ const SideBar = ({ toggleSidebar }) => {
                 }
               >
                 02
-              </h2>
-              <h1
+              </motion.h2>
+              <motion.h1
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                whileHover={{ scale: 1.2 }}
+                onHoverStart={(e) => {}}
+                onHoverEnd={(e) => {}}
+                transition={{
+                  ease: easeInOut,
+                  duration: 0.1,
+                  type: "spring",
+                  damping: 10,
+                }}
                 id={styles.pointer_none}
                 className={
                   activeDotIndex === 1
@@ -122,22 +204,40 @@ const SideBar = ({ toggleSidebar }) => {
                 }
                 onClick={() => handleDotClick(1)}
               >
-                SHOP
-              </h1>
+                <Link href={"/Pages/Shop_Page"} onClick={toggleSidebar}>
+                  SHOP
+                </Link>
+              </motion.h1>
             </div>
           </div>
           <div className={`${styles.stripe} ${styles.strip3}`}>
             <div className={styles.first}></div>
             <div className={styles.second}>
-              <div
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  ease: easeInOut,
+                  duration: 0.1,
+                  type: "spring",
+                  damping: 10,
+                }}
                 id={styles.smdot}
                 className={
                   activeDotIndex === 2
                     ? `${styles.active} ${styles.opacity100}`
                     : `${styles.opacity50}`
                 }
-              ></div>
-              <h2
+              ></motion.div>
+              <motion.h2
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  ease: easeInOut,
+                  duration: 0.1,
+                  type: "spring",
+                  damping: 10,
+                }}
                 id={styles.pointer_none}
                 className={
                   activeDotIndex === 2
@@ -146,8 +246,19 @@ const SideBar = ({ toggleSidebar }) => {
                 }
               >
                 03
-              </h2>
-              <h1
+              </motion.h2>
+              <motion.h1
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                whileHover={{ scale: 1.2 }}
+                onHoverStart={(e) => {}}
+                onHoverEnd={(e) => {}}
+                transition={{
+                  ease: easeInOut,
+                  duration: 0.1,
+                  type: "spring",
+                  damping: 10,
+                }}
                 id={styles.pointer_none}
                 className={
                   activeDotIndex === 2
@@ -156,22 +267,38 @@ const SideBar = ({ toggleSidebar }) => {
                 }
                 onClick={() => handleDotClick(2)}
               >
-                CATEGORIES
-              </h1>
+                <Link href={"/Pages/Categories"} onClick={toggleSidebar}>CATEGORIES</Link>
+              </motion.h1>
             </div>
           </div>
           <div className={`${styles.stripe} ${styles.strip4}`}>
             <div className={styles.first}></div>
             <div className={styles.second}>
-              <div
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  ease: easeInOut,
+                  duration: 0.1,
+                  type: "spring",
+                  damping: 10,
+                }}
                 id={styles.smdot}
                 className={
                   activeDotIndex === 3
                     ? `${styles.active} ${styles.opacity100}`
                     : `${styles.opacity50}`
                 }
-              ></div>
-              <h2
+              ></motion.div>
+              <motion.h2
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  ease: easeInOut,
+                  duration: 0.1,
+                  type: "spring",
+                  damping: 10,
+                }}
                 id={styles.pointer_none}
                 className={
                   activeDotIndex === 3
@@ -180,8 +307,19 @@ const SideBar = ({ toggleSidebar }) => {
                 }
               >
                 04
-              </h2>
-              <h1
+              </motion.h2>
+              <motion.h1
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                whileHover={{ scale: 1.2 }}
+                onHoverStart={(e) => {}}
+                onHoverEnd={(e) => {}}
+                transition={{
+                  ease: easeInOut,
+                  duration: 0.1,
+                  type: "spring",
+                  damping: 10,
+                }}
                 id={styles.pointer_none}
                 className={
                   activeDotIndex === 3
@@ -190,22 +328,38 @@ const SideBar = ({ toggleSidebar }) => {
                 }
                 onClick={() => handleDotClick(3)}
               >
-                NEW ARRIVALS
-              </h1>
+                <Link href={"/Pages/Arrivals"} onClick={toggleSidebar}>NEW ARRIVALS</Link>
+              </motion.h1>
             </div>
           </div>
           <div className={`${styles.stripe} ${styles.strip5}`}>
             <div className={styles.first}></div>
             <div className={styles.second}>
-              <div
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  ease: easeInOut,
+                  duration: 0.1,
+                  type: "spring",
+                  damping: 10,
+                }}
                 id={styles.smdot}
                 className={
                   activeDotIndex === 4
                     ? `${styles.active} ${styles.opacity100}`
                     : `${styles.opacity50}`
                 }
-              ></div>
-              <h2
+              ></motion.div>
+              <motion.h2
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  ease: easeInOut,
+                  duration: 0.1,
+                  type: "spring",
+                  damping: 10,
+                }}
                 id={styles.pointer_none}
                 className={
                   activeDotIndex === 4
@@ -214,8 +368,19 @@ const SideBar = ({ toggleSidebar }) => {
                 }
               >
                 05
-              </h2>
-              <h1
+              </motion.h2>
+              <motion.h1
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                whileHover={{ scale: 1.2 }}
+                onHoverStart={(e) => {}}
+                onHoverEnd={(e) => {}}
+                transition={{
+                  ease: easeInOut,
+                  duration: 0.1,
+                  type: "spring",
+                  damping: 10,
+                }}
                 id={styles.pointer_none}
                 className={
                   activeDotIndex === 4
@@ -224,8 +389,8 @@ const SideBar = ({ toggleSidebar }) => {
                 }
                 onClick={() => handleDotClick(4)}
               >
-                ABOUT US
-              </h1>
+                <Link href={"/Pages/About"} onClick={toggleSidebar}>ABOUT US</Link>
+              </motion.h1>
             </div>
           </div>
         </div>
@@ -261,7 +426,7 @@ const SideBar = ({ toggleSidebar }) => {
             onClick={() => handleDotClick(4)}
           ></div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
