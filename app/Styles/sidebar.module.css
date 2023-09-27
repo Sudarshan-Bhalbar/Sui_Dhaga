@@ -1,38 +1,35 @@
-#pointer_none{
-  -moz-user-select: none;
+#circle_wrapper {
+  width: 100vw;
+  height: 200vh;
+  position: relative;
 }
-#sidebar_wraper {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  z-index: 99;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  overflow: hidden;
-}
-#main_circle {
+#circle {
   width: 150vh;
   height: 150vh;
+  /* background-color: aquamarine; */
   border-radius: 50%;
-  position: relative;
-  top: -20vh;
-  left: -80vh;
-  border: 1px solid #cacaca;
-}
-#main_circle p {
-  position: absolute;
+  position: fixed;
   top: 50%;
-  left: 50%;
-  transform: translate(-50deg, -50deg);
+  left: 0%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #00000028;
+  /* rotate: 30deg; */
 }
+
 #Close_btn {
   color: #a6a5a5;
   position: absolute;
-  top: 5%;
-  right: 5%;
-  width: 3vw;
-  height: 3vw;
+  top: 2%;
+  right: 3%;
+  width: 4vw;
+  height: 4vw;
+}
+.cross{
+  width: 100%;
+  height: 100%;
 }
 .stripe {
   position: absolute;
@@ -45,35 +42,35 @@
   display: flex;
 }
 .strip1 {
-  transform: translate(0%, -50%) rotate(-30deg);
+  transform: translate(0%, -50%) rotate(0deg);
 }
 .strip2 {
   transform: translate(0%, -50%) rotate(-15deg);
 }
 .strip3 {
-  transform: translate(0%, -50%) rotate(0deg);
+  transform: translate(0%, -50%) rotate(-30deg);
 }
 .strip4 {
-  transform: translate(0%, -50%) rotate(15deg);
+  transform: translate(0%, -50%) rotate(-45deg);
 }
 .strip5 {
-  transform: translate(0%, -50%) rotate(30deg);
+  transform: translate(0%, -50%) rotate(-60deg);
 }
 
 .first {
   width: 50%;
   height: 100%;
 }
-.second #smdot{
-  width: 10px;
-  height: 10px;
+.second #smdot {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background-color: #cacaca;
+  /* background-color: #cacaca; */
+  background-color: #292828ce;
   position: absolute;
   top: 50%;
-  left: -0.8%;
-  transform: translate(-0.8%,-50%);
-
+  left: -0.6%;
+  transform: translate(-0.8%, -50%);
 }
 #smdot.active {
   background-color: rgba(0, 0, 0, 0.688);
@@ -86,16 +83,30 @@
   font-family: sans-serif;
   font-size: 3vw;
   display: flex;
+  justify-content: space-between;
+  align-items: center;  
   padding-left: 2%;
   gap: 20%;
-  color: #cacaca;
+  color: #cacacaab;
 }
 .second h2 {
   font-family: CorelDraw;
+  color: #292828ce;
+  font-size: 5vw;
+
 }
+.second h1:hover{
+  opacity: 1;
+}
+.second h1{
+  line-height: 4.5vw;
+  font-weight: 100;
+  font-size: 5.5vw;
+}
+
 #dot_btn {
-  position: absolute;
-  right: 10%;
+  position: fixed;
+  right: 3%;
   top: 25%;
   width: fit-content;
   height: 50%;
@@ -117,6 +128,7 @@
   background-color: #cacaca;
 }
 
-.active {
-  color: rgba(0, 0, 0, 0.688);
+
+.active{
+  color: #292828ce;
 }
