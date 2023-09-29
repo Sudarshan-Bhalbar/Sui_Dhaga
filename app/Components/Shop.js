@@ -1,14 +1,30 @@
 import Image from "next/image";
 import { FaHeart } from "react-icons/fa";
-import { CgShoppingCart } from "react-icons/cg";
+import InfoSider from "./InfoSider";
 import { useState } from "react";
 import Images from "@/app/Components/Images";
 import Img1 from "@/app/images/model2.svg";
 import Styles from "@/app/Styles/shoppage.module.css";
+import { AnimatePresence } from "framer-motion";
+import { easeInOut, motion, stagger } from "framer-motion";
 
 const Shop = () => {
   const [likes, setLikes] = useState(Array(8).fill(false));
   const [ItemImageSrc, setItemImageSrc] = useState(Images.map((e) => e.ItemImageSrc[0]));
+  const [isSiderOpen, setIsSiderOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const toggleSider = () => {
+    if (isSiderOpen) {
+      // Sidebar is open, so enable scrolling
+      document.body.style.overflow = "auto";
+    } 
+    else {
+      // Sidebar is closed, so disable scrolling
+      document.body.style.overflow = "hidden";
+    }
+    setIsSiderOpen(!isSiderOpen);
+  };
 
   const handleMouseOver = (index) => {
     const newItemImageSrc = [...ItemImageSrc];
@@ -27,7 +43,12 @@ const Shop = () => {
     newLikes[index] = !newLikes[index];
     setLikes(newLikes);
   };
-  
+
+  const handleElementClick = (index) => {
+    setSelectedItem(Images[index]);
+    console.log(Images[index]);
+    toggleSider();
+  };
 
   return (
     <>
@@ -51,7 +72,7 @@ const Shop = () => {
           {Images.map((e, index) => {
            
             return (
-              <div id={Styles.shop_elements} key={index}>
+              <div id={Styles.shop_elements} key={index} onClick={() => handleElementClick(index)}>
                 <FaHeart
                   id={Styles.heart}
                   onClick={() => handleClick(index)}
@@ -70,14 +91,28 @@ const Shop = () => {
                       layout="fill"
                     />
                   </div>
-                  <div id={Styles.cart_btn}>
+                  {/* <div id={Styles.cart_btn}>
                     <CgShoppingCart id={Styles.cart_icon}/>
-                  </div>
+                  </div> */}
               </div>
             );
           })}
         </div>
       </div>
+      <AnimatePresence>
+        {isSiderOpen && (
+          <motion.div
+            className="sidebar"
+            initial={{ opacity:0}}
+            animate={{ opacity:1}}
+            exit={{ opacity:0}}
+            style={{backgroundColor:"transparent"}}
+            transition={{ duration: 0.5, ease: easeInOut, delayChildren:stagger(0.5) }}
+          >
+            <InfoSider toggleSider={toggleSider} selectedItem={selectedItem} />
+          </motion.div>
+        )}
+      </AnimatePresence> 
     </>
   );
 };

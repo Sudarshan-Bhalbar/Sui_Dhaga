@@ -1,15 +1,12 @@
 
 import Home from "@/app/Pages/home/page";
-import ShopPage from "./Pages/Shop_Page/page";
-
 
 const page = () => {
   return (
     <>
-        <Home/>
-        {/* <ShopPage/> */}
+      <Home />
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;

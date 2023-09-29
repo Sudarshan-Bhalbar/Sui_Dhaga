@@ -2,7 +2,12 @@
 import "./globals.css";
 import { Raleway } from "next/font/google";
 import Navbar from "@/app/Components/Navbar";
-import Footer from "@/app/Components/Footer";
+import dynamic from "next/dynamic";
+
+const LazyFooter = dynamic(() => import("@/app/Components/Footer"), {
+  ssr: false,
+  loading: () => <p>Loading...</p>,
+});
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -10,9 +15,7 @@ const raleway = Raleway({
   weight: ["100", "400", "700"],
 });
 
-export const metadata = {
-  title: "SUI DHAGA",
-};
+
 
 export default function RootLayout({ children }) {
   return (
@@ -20,7 +23,7 @@ export default function RootLayout({ children }) {
       <body className={raleway.className}>
         <Navbar />
         {children}
-        <Footer />
+        <LazyFooter />
       </body>
     </html>
   );
