@@ -1,5 +1,4 @@
 import Styles from "./style.module.css"
-import loading from "../home/loading"
 
 const ShopPage = () => {
   return (
