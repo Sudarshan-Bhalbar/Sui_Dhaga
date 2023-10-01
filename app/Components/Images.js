@@ -15,6 +15,7 @@ const Items = [
   {
     Id: 2,
     ItemName: "V-neck blouse",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     Itemtype: "",
     ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 1,599.00",
@@ -26,6 +27,7 @@ const Items = [
   {
     Id: 3,
     ItemName: "Rib-knit jumper",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     Itemtype: "",
     ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 2,999.00",
@@ -37,6 +39,7 @@ const Items = [
   {
     Id: 4,
     ItemName: "Slim Mom High Ankle Jeans",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     Itemtype: "",
     ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 3,499.00",
@@ -48,6 +51,7 @@ const Items = [
   {
     Id: 5,
     ItemName: "Pendant earrings",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     Itemtype: "",
     ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 5,499.00",
@@ -59,6 +63,7 @@ const Items = [
   {
     Id: 6,
     ItemName: "Oversized printed T-shirt",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     Itemtype: "",
     ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 1,499.00",
@@ -68,8 +73,9 @@ const Items = [
     ],
   },
   {
-    Id: 1,
+    Id: 7,
     ItemName: "Jersey trousers",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     Itemtype: "",
     ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 1,499.00",
@@ -79,8 +85,9 @@ const Items = [
     ],
   },
   {
-    Id: 2,
+    Id: 8,
     ItemName: "V-neck blouse",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     Itemtype: "",
     ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 1,599.00",
@@ -90,8 +97,9 @@ const Items = [
     ],
   },
   {
-    Id: 3,
+    Id: 9,
     ItemName: "Rib-knit jumper",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     Itemtype: "",
     ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 2,999.00",

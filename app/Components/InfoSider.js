@@ -22,14 +22,14 @@ const item = {
     y: 0,
     opacity: 1,
     transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2,
+      delayChildren: 0.1,
+      staggerChildren: 0.1,
     },
   },
 };
 
 const InfoSider = ({ toggleSider, selectedItem }) => {
-  console.log(selectedItem.ItemDesc);
+  // console.log(selectedItem.ItemDesc);
   const [selectedSize, setSelectedSize] = useState(Array(8).fill(false));
 
   const handleClick = (index) => {

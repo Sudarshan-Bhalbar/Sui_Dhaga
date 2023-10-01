@@ -16,7 +16,7 @@ html,body{
 
 body {
 
-  background-color: #5f60b9;
+  background-color: #e8e8e8;
 }
 
 .no-select::selection {
@@ -32,6 +32,7 @@ body {
   height: 100vh;
   overflow: hidden;
   position: relative;
+  background-color: #5f60b9;
 }
 
 #main-landing-page #model-image {

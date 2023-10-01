@@ -1,7 +1,9 @@
 #circle_wrapper {
   width: 100vw;
-  height: 200vh;
+  height: 400vh;
   position: relative;
+  scroll-behavior: smooth;
+  overflow: hidden;
 }
 #circle {
   width: 150vh;
@@ -16,9 +18,7 @@
   justify-content: center;
   align-items: center;
   border: 1px solid #00000028;
-  /* rotate: 30deg; */
 }
-
 #Close_btn {
   color: #a6a5a5;
   position: absolute;
