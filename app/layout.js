@@ -2,8 +2,11 @@
 import "./globals.css";
 import { Raleway } from "next/font/google";
 import Navbar from "@/app/Components/Navbar";
-import Footer from "@/app/Components/Footer";
-
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import("@/app/Components/Footer"), {
+  ssr:false,
+  loading: () => <p>Loading...</p>,
+})
 const raleway = Raleway({
   subsets: ["latin"],
   style: ["normal", "italic"],

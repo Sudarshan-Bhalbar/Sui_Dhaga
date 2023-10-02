@@ -57,7 +57,6 @@ const Shop = () => {
                   onClick={() => handleClick(index)}
                   style={{
                     color: likes[index] ? "#ff00008e" : "#a2a2d2",
-                    zIndex: 99,
                   }}
                 />
                   <div id={Styles.image_container}
