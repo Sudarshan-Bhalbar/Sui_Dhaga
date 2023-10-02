@@ -8,6 +8,16 @@ import Styles from "@/app/Styles/shoppage.module.css";
 import { AnimatePresence } from "framer-motion";
 import { easeInOut, motion, stagger } from "framer-motion";
 import Link from "next/link";
+import AnimatedText from "./AnimatedText";
+
+
+const ArrivalsContainerVariant={
+  animate: {
+     transition:{
+      
+     } 
+  }
+}
 
 const Shop = () => {
   const [likes, setLikes] = useState(Array(8).fill(false));
@@ -55,39 +65,56 @@ const Shop = () => {
   return (
     <>
       <motion.div id={Styles.shop_page}>
-        <motion.h1 className={Styles.no_select}
-          initial={{y:100,opacity:0}}
-          whileInView={{y:0,opacity:1}}
-          transition={{duration:1,ease:easeInOut}}
-        >Shop</motion.h1>
+        <motion.h1
+          className={Styles.no_select}
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: easeInOut }}
+        >
+          Shop
+        </motion.h1>
         <div id={Styles.shop_image_div}>
-          <motion.div id={Styles.Image_div}
-            initial={{y:200, opacity:0}}
-            whileInView={{y:0,opacity:1}}
-            transition={{duration:1,ease:easeInOut}}
+          <motion.div
+            id={Styles.Image_div}
+            initial={{ y: 200, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: easeInOut }}
           >
             <Image src={Img1} layout="fill" alt="img" />
           </motion.div>
-          <div id={Styles.shop_text}>
-            <p className={Styles.no_select}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-              molestiae delectus iusto deleniti!
-            </p>
+          <motion.div id={Styles.shop_text}
+          initial={{opacity:0,y:200}}
+          whileInView={{y:0,opacity:1}}
+          transition={{duration:1,ease:easeInOut}}
+          >
+            <AnimatedText text={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate molestiae delectus iusto deleniti!"}/>
             <Link href={"/Pages/Shop_Page"}>
               <div id={Styles.shop_Btn} className={Styles.no_select}>
                 Shop Now
               </div>
             </Link>
-          </div>
-          <div id={Styles.shop_highlight_text}>
+          </motion.div>
+          <motion.div id={Styles.shop_highlight_text}
+          initial={{opacity:0,y:200}}
+          whileInView={{y:0,opacity:1}}
+          transition={{duration:1,ease:easeInOut}}
+          >
             <p className={Styles.no_select}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
               consequuntur iure. Quo, accusamus?
             </p>
-          </div>
+          </motion.div>
         </div>
-        <h1 className={Styles.no_select}>New Arrivals</h1>
-        <div id={Styles.shop_page_elements}>
+        <motion.h1 className={Styles.no_select}
+        initial={{y:200,opacity:0}}
+        whileInView={{y:0,opacity:1}}
+        transition={{duration:1,ease:easeInOut}}
+        >New Arrivals</motion.h1>
+        <motion.div id={Styles.shop_page_elements} 
+        variants={ArrivalsContainerVariant}
+        initial="initial"
+        animate="animate"
+        >
           {Images.map((e, index) => {
             return (
               <div
@@ -119,7 +146,7 @@ const Shop = () => {
               </div>
             );
           })}
-        </div>
+        </motion.div>
       </motion.div>
       <AnimatePresence>
         {isSiderOpen && (

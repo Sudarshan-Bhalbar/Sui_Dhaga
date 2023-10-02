@@ -20,14 +20,15 @@ const About = dynamic(() => import("@/app/Components/About"), {
   loading: () => <p>Loading...</p>,
 });
 
+
 const Home = () => {
   return (
     <>
-      <div id="main-landing-page">
+      <motion.div id="main-landing-page">
         <motion.div
           id="Image-div-hp"
           initial={{ y: 200, opacity: 0.5 }}
-          animate={{ y: 0, opacity: 1 }}
+          whileInView={{opacity:1,y:0}}
           transition={{ duration: 1, ease: easeInOut }}
         >
           <Image src={Model} layout="fill" alt="" />
@@ -35,7 +36,7 @@ const Home = () => {
         <motion.div
           id="main-text-center"
           initial={{ y: 200, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          whileInView={{opacity:1,y:0}}
           transition={{ duration: 1, ease: easeInOut }}
         >
           <h1 className="no-select">
@@ -53,7 +54,7 @@ const Home = () => {
               id="shop-btn"
               className="no-select"
               initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6, ease: easeInOut, delay: 0.5 }}
             >
               Shop Now
@@ -64,10 +65,10 @@ const Home = () => {
         <motion.div
           id="landing-page-pin-pic"
           initial={{ y: 200, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: easeInOut }}
         ></motion.div>
-      </div>
+      </motion.div>
       <Categories />
       <ShopPage />
       <About />
