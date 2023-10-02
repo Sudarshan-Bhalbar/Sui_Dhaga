@@ -1,0 +1,118 @@
+.no_select::selection {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  -moz-user-select: none;
+}
+.infosider_main_container {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* cursor:none; */
+}
+.infosider_contentShower {
+  width: 80%;
+  height: 80%;
+  background-color: #f1eff0;
+  border-radius: 25px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#back_btn {
+  width: 5%;
+  height: 10%;
+  background-color: #a2a2d2;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#back {
+  width: 50%;
+  height: 50%;
+}
+#content_div {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+}
+#content_div #Imagediv {
+  position: relative;
+  top: 0%;
+  left: 5%;
+  width: 25%;
+  height: 80%;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
+  border-radius: 25%;
+}
+#Imagediv img {
+  border-radius: 5%;
+}
+#content_div #Item_Name {
+  width: 75%;
+  height: 80%;
+  padding-left: 15%;
+  padding-top: 5%;
+  /* background-color: #ac2066; */
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 5%;
+}
+#Item_Name h1 {
+  font-family: CorelDraw;
+  font-size: 5vh;
+  cursor: default;
+}
+#Item_Name h3 {
+  font-family: monospace;
+  font-size: 2vh;
+  color: #7a7b7b;
+  cursor: default;
+}
+#Item_Name h4 {
+  font-family: monospace;
+  font-size: 3vh;
+  cursor: default;
+}
+#Sizes {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  gap: 5%;
+  align-items: center;
+  cursor: pointer;
+}
+#Item_Size {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 2%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#add_cart_btn{
+  width: fit-content;
+  height: fit-content;
+  background-color: #a2a2d2;
+  color: #f1eff0;
+  margin-top: 2%;
+  padding: 1.5% 2%;
+  border-radius: 50px;
+  cursor: pointer;
+}

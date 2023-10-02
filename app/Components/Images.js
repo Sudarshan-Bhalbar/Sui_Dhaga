@@ -1,9 +1,11 @@
 const Items = [
   {
+    
     Id: 1,
     ItemName: "Jersey trousers",
-    Itemtype: "",
-    ItemSize: [],
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    Itemtype: "Upper",
+    ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 1,499.00",
     ItemImageSrc: [
       "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fe1%2F51%2Fe151f22058e91ac8f21d1f0236eb21cc9c431290.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
@@ -13,8 +15,9 @@ const Items = [
   {
     Id: 2,
     ItemName: "V-neck blouse",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     Itemtype: "",
-    ItemSize: [],
+    ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 1,599.00",
     ItemImageSrc: [
       "https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2Fdd%2Fd6%2Fddd64901b905c93761d653bcd7ee224135c8f7be.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D",
@@ -24,8 +27,9 @@ const Items = [
   {
     Id: 3,
     ItemName: "Rib-knit jumper",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     Itemtype: "",
-    ItemSize: [],
+    ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 2,999.00",
     ItemImageSrc: [
       "https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2Ff6%2F85%2Ff68534609bb31f508d6c968ae3bd7ac2d03dee98.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D",
@@ -35,8 +39,9 @@ const Items = [
   {
     Id: 4,
     ItemName: "Slim Mom High Ankle Jeans",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     Itemtype: "",
-    ItemSize: [],
+    ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 3,499.00",
     ItemImageSrc: [
       "https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2Fac%2F33%2Fac33c033d44e6e37aabfa44cf7d06bfc5545b8ef.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D",
@@ -46,8 +51,9 @@ const Items = [
   {
     Id: 5,
     ItemName: "Pendant earrings",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     Itemtype: "",
-    ItemSize: [],
+    ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 5,499.00",
     ItemImageSrc: [
       "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F25%2F72%2F2572da567009c0b550805cfb62aab91698c0a72c.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
@@ -57,8 +63,9 @@ const Items = [
   {
     Id: 6,
     ItemName: "Oversized printed T-shirt",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     Itemtype: "",
-    ItemSize: [],
+    ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 1,499.00",
     ItemImageSrc: [
       "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fc6%2Fab%2Fc6ab5b0f42b01b7d7470e1046e3c2163038b1a8b.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bladies_tops_printed_tshirts%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
@@ -66,10 +73,11 @@ const Items = [
     ],
   },
   {
-    Id: 1,
+    Id: 7,
     ItemName: "Jersey trousers",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     Itemtype: "",
-    ItemSize: [],
+    ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 1,499.00",
     ItemImageSrc: [
       "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fe1%2F51%2Fe151f22058e91ac8f21d1f0236eb21cc9c431290.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
@@ -77,10 +85,11 @@ const Items = [
     ],
   },
   {
-    Id: 2,
+    Id: 8,
     ItemName: "V-neck blouse",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     Itemtype: "",
-    ItemSize: [],
+    ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 1,599.00",
     ItemImageSrc: [
       "https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2Fdd%2Fd6%2Fddd64901b905c93761d653bcd7ee224135c8f7be.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D",
@@ -88,10 +97,11 @@ const Items = [
     ],
   },
   {
-    Id: 3,
+    Id: 9,
     ItemName: "Rib-knit jumper",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     Itemtype: "",
-    ItemSize: [],
+    ItemSize: ["SM","M","L","XL","XXL","XXXL"],
     ItemPrice: "Rs. 2,999.00",
     ItemImageSrc: [
       "https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2Ff6%2F85%2Ff68534609bb31f508d6c968ae3bd7ac2d03dee98.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D",

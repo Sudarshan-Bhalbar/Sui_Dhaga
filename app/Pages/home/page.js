@@ -3,6 +3,8 @@ import Image from "next/image";
 import Model from "@/app/images/m.svg";
 import { BsArrowRight } from "react-icons/bs";
 import dynamic from "next/dynamic";
+
+import Link from "next/link";
 const Categories = dynamic(() => import("@/app/Components/Categories"), {
   ssr:false,
   loading: () => <p>Loading...</p>,
@@ -38,15 +40,18 @@ const Home = () => {
             The fashion industry statistics show that the apparel and textile
             sector is the 4th biggest in the world.
           </p>
-          <div id="shop-btn" className="no-select">
-            Shop Now <BsArrowRight className="right-arrow" />
-          </div>
+          <Link href={"/Pages/Shop_Page"}>
+            <div id="shop-btn" className="no-select">
+              Shop Now
+              <BsArrowRight className="right-arrow" />
+            </div>
+          </Link>
         </div>
         <div id="landing-page-pin-pic"></div>
       </div>
-        <Categories />
-        <ShopPage />
-        <About />
+      <Categories />
+      <ShopPage />
+      <About />
     </>
   );
 };

@@ -7,15 +7,12 @@ const Footer = dynamic(() => import("@/app/Components/Footer"), {
   ssr:false,
   loading: () => <p>Loading...</p>,
 })
+
 const raleway = Raleway({
   subsets: ["latin"],
   style: ["normal", "italic"],
   weight: ["100", "400", "700"],
 });
-
-export const metadata = {
-  title: "SUI DHAGA",
-};
 
 export default function RootLayout({ children }) {
   return (

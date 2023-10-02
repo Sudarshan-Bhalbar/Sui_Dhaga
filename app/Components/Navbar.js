@@ -18,7 +18,6 @@ const Navbar = () => {
       } else {
         setIsScrolled(false);
       }
-      // console.log(scrollTop);
     };
 
 
@@ -32,7 +31,7 @@ const Navbar = () => {
   const toggleSidebar = () => {
     if (isSidebarOpen) {
       // Sidebar is open, so enable scrolling
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "scroll";
     } 
     else {
       // Sidebar is closed, so disable scrolling
