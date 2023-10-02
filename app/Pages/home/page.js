@@ -3,17 +3,20 @@ import Image from "next/image";
 import Model from "@/app/images/m.svg";
 import { BsArrowRight } from "react-icons/bs";
 import dynamic from "next/dynamic";
-import Link from "next/link";
 
+import Link from "next/link";
 const Categories = dynamic(() => import("@/app/Components/Categories"), {
-  ssr: false,
+  ssr:false,
   loading: () => <p>Loading...</p>,
 });
 const ShopPage = dynamic(() => import("@/app/Components/Shop"), {
-  ssr: false,
+  ssr:false,
   loading: () => <p>Loading...</p>,
 });
-const About = dynamic(() => import("@/app/Components/About"));
+const About = dynamic(() => import("@/app/Components/About"), {
+  ssr:false,
+  loading: () => <p>Loading...</p>,
+});
 
 const Home = () => {
   return (

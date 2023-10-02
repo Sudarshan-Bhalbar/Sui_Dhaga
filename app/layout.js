@@ -3,12 +3,10 @@ import "./globals.css";
 import { Raleway } from "next/font/google";
 import Navbar from "@/app/Components/Navbar";
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
-
-const LazyFooter = dynamic(() => import("@/app/Components/Footer"), {
-  ssr: false,
+const Footer = dynamic(() => import("@/app/Components/Footer"), {
+  ssr:false,
   loading: () => <p>Loading...</p>,
-});
+})
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -21,8 +19,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={raleway.className}>
         <Navbar />
-        <Suspense fallback={<loading />}>{children}</Suspense>
-        <LazyFooter />
+        {children}
+        <Footer />
       </body>
     </html>
   );
