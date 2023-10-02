@@ -20,7 +20,6 @@ const Navbar = () => {
       }
     };
 
-
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -31,9 +30,14 @@ const Navbar = () => {
   const toggleSidebar = () => {
     if (isSidebarOpen) {
       // Sidebar is open, so enable scrolling
+<<<<<<< Updated upstream
       document.body.style.overflow = "scroll";
     } 
     else {
+=======
+      document.body.style.overflow = "auto";
+    } else {
+>>>>>>> Stashed changes
       // Sidebar is closed, so disable scrolling
       document.body.style.overflow = "hidden";
     }
@@ -48,16 +52,18 @@ const Navbar = () => {
           className={`navbar fixed z-50 ${
             isScrolled ? "navbar--scrolled" : ""
           }`}
-          initial={{ backgroundColor: "transparent" }}
+          initial={{ backgroundColor: "transparent", y: -100, opacity: 0 }}
           animate={{
             backgroundColor: isScrolled
               ? "rgba(255, 255, 255, 0.5)"
               : "transparent",
+            y: 0,
+            opacity: 1,
           }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.6, ease: easeInOut }}
         >
           <div id={Styles.nav_l}>
-            <motion.h3>SUI DHAGA</motion.h3>
+            <h3>SUI DHAGA</h3>
           </div>
           <div id={Styles.nav_r}>
             <RiMenu3Line id={Styles.nav_r_menu_bar} onClick={toggleSidebar} />
@@ -68,10 +74,14 @@ const Navbar = () => {
         {isSidebarOpen && (
           <motion.div
             className="sidebar"
-            initial={{ x: "100vw"}}
-            animate={{ x: 0}}
-            exit={{ x: "100vw"}}
-            transition={{ duration: 0.5, ease: easeInOut, delayChildren:stagger(0.5) }}
+            initial={{ x: "100vw" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100vw" }}
+            transition={{
+              duration: 0.5,
+              ease: easeInOut,
+              delayChildren: stagger(0.5),
+            }}
           >
             <SideBar toggleSidebar={toggleSidebar} />
           </motion.div>

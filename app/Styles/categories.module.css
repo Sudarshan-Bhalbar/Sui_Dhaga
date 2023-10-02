@@ -18,6 +18,7 @@
   font-family: CorelDraw;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3));
 }
+<<<<<<< Updated upstream
 
 #categories_page img {
   position: absolute;
@@ -26,14 +27,27 @@
   width: 60vw;
   height: 150vh;
   transform: translate(-50%, -50%);
+=======
+.Img_div{
+  position: relative;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+>>>>>>> Stashed changes
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
 }
 
 #categories_page_pin_img {
   position: absolute;
   transform: translate(-50%, -50%);
+<<<<<<< Updated upstream
   width: 150px;
   height: 200px;
+=======
+  background-color: #939295;
+  width: 12vw;
+  height: 35vh;
+>>>>>>> Stashed changes
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -87,8 +101,13 @@
   /* background-position: bottom; */
 }
 #categories_page .img_2 {
+<<<<<<< Updated upstream
   bottom: -5%;
   right: 30%;
+=======
+  bottom: 2%;
+  right: 20%;
+>>>>>>> Stashed changes
   background-image: url("../images/Shoes_wear.jpg");
 }
 #categories_page .img_3 {
@@ -97,9 +116,14 @@
   background-image: url("../images/outer_wear.jpg");
 }
 #categories_page .img_4 {
+<<<<<<< Updated upstream
   bottom: 42%;
   right: 20%;
   transform: rotate(15deg);
+=======
+  bottom: 50%;
+  left: 80%;
+>>>>>>> Stashed changes
   background-image: url("../images/accessories.jpg");
 }
 #categories_text_btn_div {
