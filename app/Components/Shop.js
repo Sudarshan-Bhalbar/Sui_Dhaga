@@ -54,12 +54,20 @@ const Shop = () => {
 
   return (
     <>
-      <div id={Styles.shop_page}>
-        <h1 className={Styles.no_select}>Shop</h1>
+      <motion.div id={Styles.shop_page}>
+        <motion.h1 className={Styles.no_select}
+          initial={{y:100,opacity:0}}
+          whileInView={{y:0,opacity:1}}
+          transition={{duration:1,ease:easeInOut}}
+        >Shop</motion.h1>
         <div id={Styles.shop_image_div}>
-          <div id={Styles.Image_div}>
+          <motion.div id={Styles.Image_div}
+            initial={{y:200, opacity:0}}
+            whileInView={{y:0,opacity:1}}
+            transition={{duration:1,ease:easeInOut}}
+          >
             <Image src={Img1} layout="fill" alt="img" />
-          </div>
+          </motion.div>
           <div id={Styles.shop_text}>
             <p className={Styles.no_select}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
@@ -112,7 +120,7 @@ const Shop = () => {
             );
           })}
         </div>
-      </div>
+      </motion.div>
       <AnimatePresence>
         {isSiderOpen && (
           <motion.div

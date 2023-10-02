@@ -1,17 +1,4 @@
 import dynamic from "next/dynamic";
-<<<<<<< Updated upstream
-// import { Suspense } from "react";
-import { RiH1 } from "react-icons/ri";
-import Loader from "./Components/Loader";
-const Home = dynamic(() => import("@/app/Pages/home/page"),{
-  // loading: {<Loader />}
-});
-
-const page = () => {
-  return (
-    <>
-        <Home />
-=======
 
 const Home = dynamic(() => import("@/app/Pages/home/page"), {
   ssr: false,
@@ -36,7 +23,6 @@ const page = () => {
       </div>
       <Home />
       {/* <ShopPage/> */}
->>>>>>> Stashed changes
     </>
   );
 };
