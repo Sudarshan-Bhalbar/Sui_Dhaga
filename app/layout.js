@@ -10,9 +10,7 @@ const raleway = Raleway({
   weight: ["100", "400", "700"],
 });
 
-export const metadata = {
-  title: "SUI DHAGA",
-};
+
 
 export default function RootLayout({ children }) {
   return (
