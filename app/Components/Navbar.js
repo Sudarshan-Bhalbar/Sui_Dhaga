@@ -30,14 +30,8 @@ const Navbar = () => {
   const toggleSidebar = () => {
     if (isSidebarOpen) {
       // Sidebar is open, so enable scrolling
-<<<<<<< Updated upstream
-      document.body.style.overflow = "scroll";
-    } 
-    else {
-=======
       document.body.style.overflow = "auto";
     } else {
->>>>>>> Stashed changes
       // Sidebar is closed, so disable scrolling
       document.body.style.overflow = "hidden";
     }

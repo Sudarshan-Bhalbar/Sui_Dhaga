@@ -2,11 +2,16 @@ import Image from "next/image";
 import Images from "./Images";
 import Link from "next/link";
 import Styles from "@/app/Styles/footer.module.css";
+import { easeInOut, motion } from "framer-motion";
 
 const Footer = () => {
   return (
     <>
-      <div id={Styles.footer}>
+      <motion.div id={Styles.footer}
+       initial={{y:100,opacity:0}}
+       whileInView={{y:0,opacity:1}}
+       transition={{duration:0.5,ease:easeInOut}}
+      >
         <div id={Styles.footer_main}>
           <div id={Styles.footer_image_div}>
             <div id={Styles.footer_image_container}>
@@ -46,7 +51,7 @@ const Footer = () => {
         </div>
 
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

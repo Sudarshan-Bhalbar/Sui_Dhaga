@@ -1,17 +1,6 @@
+"use client"
 import dynamic from "next/dynamic";
-<<<<<<< Updated upstream
-// import { Suspense } from "react";
-import { RiH1 } from "react-icons/ri";
-import Loader from "./Components/Loader";
-const Home = dynamic(() => import("@/app/Pages/home/page"),{
-  // loading: {<Loader />}
-});
-
-const page = () => {
-  return (
-    <>
-        <Home />
-=======
+import { useEffect } from "react";
 
 const Home = dynamic(() => import("@/app/Pages/home/page"), {
   ssr: false,
@@ -29,14 +18,29 @@ const Home = dynamic(() => import("@/app/Pages/home/page"), {
   ),
 });
 const page = () => {
+  useEffect(() => {
+    let scroll;
+    import("locomotive-scroll").then((locomotiveModule) => {
+      scroll = new locomotiveModule.default({
+        el: document.querySelector("[data-scroll-container]"),
+        smooth: true,
+        smoothMobile: false,
+        resetNativeScroll: true,
+      });
+    });
+
+    // `useEffect`'s cleanup phase
+    return () => {
+      if (scroll) scroll.destroy();
+    };
+  });
   return (
     <>
       <div style={{ display: "none" }}>
         <script src="/_next/static/chunks/pages/home/page.js" defer></script>
       </div>
-      <Home />
-      {/* <ShopPage/> */}
->>>>>>> Stashed changes
+      <main className="main" data-scroll-container><Home /></main>
+      
     </>
   );
 };

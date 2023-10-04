@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import Carousel_text from "./Carousel";
 import Styles from "@/app/Styles/about.module.css";
+import { easeInOut, motion } from "framer-motion";
 
 const AboutPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,15 +25,42 @@ const AboutPage = () => {
 
   return (
     <div id={Styles.About_page}>
-      <h1 className={Styles.no_select}>About Us</h1>
-      <h3 className={Styles.no_select}>WORLD'S NO ONE PREMIUM CLOTHES</h3>
+      <motion.h1
+        className={Styles.no_select}
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: easeInOut }}
+      >
+        About Us
+      </motion.h1>
+      <motion.h3
+        className={Styles.no_select}
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: easeInOut }}
+      >
+        WORLD'S NO ONE PREMIUM CLOTHES
+      </motion.h3>
       <div id={Styles.Carousel}>
-        <SlArrowLeft
-          className={Styles.SlArrowLeft}
-          onClick={() => handlePrevious()}
-        />
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, ease: easeInOut }}
+        >
+          <SlArrowLeft
+            className={Styles.SlArrowLeft}
+            onClick={() => handlePrevious()}
+          />
+        </motion.div>
         <div id={Styles.Carousel_text}>
-          <p className={Styles.no_select}>{Carousel_text[currentIndex]}</p>
+          <motion.p
+            className={Styles.no_select}
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, ease: easeInOut }}
+          >
+            {Carousel_text[currentIndex]}
+          </motion.p>
           <div className={Styles.indicator}>
             {Carousel_text.map((_, index) => (
               <div
@@ -43,10 +71,16 @@ const AboutPage = () => {
             ))}
           </div>
         </div>
-        <SlArrowRight
-          className={Styles.SlArrowRight}
-          onClick={() => handleNext()}
-        />
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, ease: easeInOut }}
+        >
+          <SlArrowRight
+            className={Styles.SlArrowRight}
+            onClick={() => handleNext()}
+          />
+        </motion.div>
       </div>
     </div>
   );
