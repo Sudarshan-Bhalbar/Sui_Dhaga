@@ -4,9 +4,9 @@ import { Raleway } from "next/font/google";
 import Navbar from "@/app/Components/Navbar";
 import dynamic from "next/dynamic";
 const Footer = dynamic(() => import("@/app/Components/Footer"), {
-  ssr:false,
+  ssr: false,
   loading: () => <p className=" absolute bottom-0 bg-transparent"></p>,
-})
+});
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -15,6 +15,7 @@ const raleway = Raleway({
 });
 
 export default function RootLayout({ children }) {
+ 
   return (
     <html lang="en">
       <body className={raleway.className}>
