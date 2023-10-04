@@ -13,7 +13,7 @@
     color: #ff00008e;
     background-color: #f1eff0;
     width: 100vw;
-    height: 360vh;
+    height: 300vh;
     overflow-y: scroll;
   }
   #shop_page h1 {
@@ -95,8 +95,8 @@
     padding: 1%;
     border-radius: 3%;
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    /* flex-direction: column; */
+    /* overflow: hidden; */
   }
   #shop_elements #image_div {
     width: 100%;

@@ -9,15 +9,15 @@ import { easeInOut, motion } from "framer-motion";
 import AnimatedText from "@/app/Components/AnimatedText";
 const Categories = dynamic(() => import("@/app/Components/Categories"), {
   ssr: false,
-  loading: () => <p>Loading...</p>,
+  loading: () => <p className=" absolute bottom-0 bg-transparent"></p>,
 });
 const ShopPage = dynamic(() => import("@/app/Components/Shop"), {
   ssr: false,
-  loading: () => <p>Loading...</p>,
+  loading: () => <p className=" absolute bottom-0 bg-transparent"></p>,
 });
 const About = dynamic(() => import("@/app/Components/About"), {
   ssr: false,
-  loading: () => <p>Loading...</p>,
+  loading: () => <p className=" absolute bottom-0 bg-transparent"></p>,
 });
 
 

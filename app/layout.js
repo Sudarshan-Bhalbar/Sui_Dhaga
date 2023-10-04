@@ -5,7 +5,7 @@ import Navbar from "@/app/Components/Navbar";
 import dynamic from "next/dynamic";
 const Footer = dynamic(() => import("@/app/Components/Footer"), {
   ssr:false,
-  loading: () => <p>Loading...</p>,
+  loading: () => <p className=" absolute bottom-0 bg-transparent"></p>,
 })
 
 const raleway = Raleway({
