@@ -1,22 +1,7 @@
 "use client"
-import dynamic from "next/dynamic";
 import { useEffect } from "react";
+import Home from "./Pages/home/page";
 
-const Home = dynamic(() => import("@/app/Pages/home/page"), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-screen bg-slate-200 flex justify-center items-center">
-      <div class="wrapper">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
-      </div>
-    </div>
-  ),
-});
 const page = () => {
   useEffect(() => {
     let scroll;
@@ -36,9 +21,9 @@ const page = () => {
   });
   return (
     <>
-      <div style={{ display: "none" }}>
+      {/* <div style={{ display: "none" }}>
         <script src="/_next/static/chunks/pages/home/page.js" defer></script>
-      </div>
+      </div> */}
       <main className="main" data-scroll-container><Home /></main>
       
     </>
