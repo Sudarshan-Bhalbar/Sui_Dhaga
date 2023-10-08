@@ -2,23 +2,13 @@
 import Image from "next/image";
 import Model from "@/app/images/m.svg";
 import { BsArrowRight } from "react-icons/bs";
-import dynamic from "next/dynamic";
 
 import Link from "next/link";
 import { easeInOut, motion } from "framer-motion";
 import AnimatedText from "@/app/Components/AnimatedText";
-const Categories = dynamic(() => import("@/app/Components/Categories"), {
-  ssr: false,
-  loading: () => <p className=" absolute bottom-0 bg-transparent"></p>,
-});
-const ShopPage = dynamic(() => import("@/app/Components/Shop"), {
-  ssr: false,
-  loading: () => <p className=" absolute bottom-0 bg-transparent"></p>,
-});
-const About = dynamic(() => import("@/app/Components/About"), {
-  ssr: false,
-  loading: () => <p className=" absolute bottom-0 bg-transparent"></p>,
-});
+import Categories from "@/app/Components/Categories";
+import ShopPage from "@/app/Components/Shop";
+import About from  "@/app/Components/About";
 
 
 const Home = () => {

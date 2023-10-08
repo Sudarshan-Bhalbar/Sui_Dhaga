@@ -1,3 +1,4 @@
+"use client";
 import Styles from "@/app/Styles/infosider.module.css";
 import { easeInOut, motion, stagger } from "framer-motion";
 import { MdOutlineArrowBack } from "react-icons/md";

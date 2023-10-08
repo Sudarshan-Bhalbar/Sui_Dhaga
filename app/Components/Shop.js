@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { FaHeart } from "react-icons/fa";
 import InfoSider from "./InfoSider";
@@ -66,7 +67,7 @@ const Shop = () => {
 
   const handleElementClick = (index) => {
     setSelectedItem(Images[index]);
-    console.log(Images[index]);
+    // console.log(Images[index]);
     toggleSider();
   };
 
