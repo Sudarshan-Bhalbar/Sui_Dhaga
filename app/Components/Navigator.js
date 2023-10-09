@@ -1,6 +1,6 @@
 "use client";
 import S from "../Styles/navbar.module.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { easeIn, motion } from "framer-motion";
 import { HiHome } from "react-icons/hi";
 import { BiCategoryAlt } from "react-icons/bi";
@@ -11,15 +11,21 @@ import logo from "../images/logo.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const Navigator = ({value}) => {
+const Navigator = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [windowHeight , setWindowHeight] = useState(null);
   const pathname = usePathname();
 
-  if (pathname === "/") {
-    window.addEventListener("scroll", () => {
-      setScrollPosition(window.scrollY);
-    });
-  }
+  useEffect(() => {
+    setWindowHeight(window.innerHeight);
+    if (pathname === "/") {
+      window.addEventListener("scroll", () => {
+        return setScrollPosition(window.scrollY);
+      });
+    }
+  }, [])
+  
+  
 
   return (
     <motion.div
@@ -29,7 +35,7 @@ const Navigator = ({value}) => {
       transition={{ duration: 1, ease: easeIn }}
       style={{
         backgroundColor: `${
-          scrollPosition > window.innerHeight
+          scrollPosition > windowHeight
             ? "rgba(95, 96, 185, 0.52)"
             : "rgba(255, 255, 255, 0.75)"
         }`,
@@ -48,7 +54,7 @@ const Navigator = ({value}) => {
             className="flex justify-center items-center  "
             style={{
               color: `${
-                scrollPosition > window.innerHeight
+                scrollPosition > windowHeight
                   ? "rgba(255, 255, 255, 0.75)"
                   : "rgba(95, 96, 185, 0.52)"
               }`,
@@ -73,7 +79,7 @@ const Navigator = ({value}) => {
             className=" flex justify-center items-center  w-full "
             style={{
               color: `${
-                scrollPosition > window.innerHeight
+                scrollPosition > windowHeight
                   ? "rgba(255, 255, 255, 0.75)"
                   : "rgba(95, 96, 185, 0.52)"
               }`,
@@ -105,7 +111,7 @@ const Navigator = ({value}) => {
             className=" flex justify-center items-center  "
             style={{
               color: `${
-                scrollPosition > window.innerHeight
+                scrollPosition > windowHeight
                   ? "rgba(255, 255, 255, 0.75)"
                   : "rgba(95, 96, 185, 0.52)"
               }`,
@@ -126,10 +132,10 @@ const Navigator = ({value}) => {
                 />
               </Link>
               <div
-                className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900"
+                className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-cyan-500 bg-gray-900 rounded-full -top-2 -right-2"
                 id={S.badge}
               >
-                {value}
+                {/* {value} */} 10
               </div>
             </div>
             <div
@@ -154,7 +160,7 @@ const Navigator = ({value}) => {
             className=" flex justify-center items-center  "
             style={{
               color: `${
-                scrollPosition > window.innerHeight
+                scrollPosition > windowHeight
                   ? "rgba(255, 255, 255, 0.75)"
                   : "rgba(95, 96, 185, 0.52)"
               }`,
@@ -194,7 +200,7 @@ const Navigator = ({value}) => {
             className=" flex justify-center items-center  "
             style={{
               color: `${
-                scrollPosition > window.innerHeight
+                scrollPosition > windowHeight
                   ? "rgba(255, 255, 255, 0.75)"
                   : "rgba(95, 96, 185, 0.52)"
               }`,

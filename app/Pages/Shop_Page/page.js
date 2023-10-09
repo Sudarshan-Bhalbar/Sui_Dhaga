@@ -1,25 +1,16 @@
-"use client"
-import { useState } from "react";
+"use client";
 import Styles from "./style.module.css";
-import Navigator from "@/app/Components/Navigator";
 
 const ShopPage = () => {
-  const [value , setValue] = useState(0);
-  function increment() {
-    setValue(value + 1);
-    return(
-      <Navigator value={value}/>
-    )
-  }
+ 
+
+
   return (
-    <div id={Styles.shop_page}>
-      <button
-        type="button"
-        class="text-gray-900 bg-white border border-gray-300  hover:bg-gray-100  focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-        onClick={increment}
-      >
-        Increment {value}
-      </button>
+    <div id={Styles.shop_page} className="flex pt-20 ">
+        <div className=" w-9/12 h-full "></div>
+        <div className=" fixed right-0 w-1/4 h-5/6 border-l-2 border-violet-300">
+
+        </div>
     </div>
   );
 };

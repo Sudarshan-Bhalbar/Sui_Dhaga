@@ -2,6 +2,8 @@
 // import { useEffect } from "react";
 import Home from "./Pages/home/page";
 
+
+
 const page = () => {
   // useEffect(() => {
   //   let scroll;
