@@ -1,5 +1,51 @@
-#shop_page{
-    width: 100vw;
+#top{
+    pointer-events: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
     height: 100vh;
-    background-color: #F1EFF0;
-}
+  }
+  #workingarea{
+    position: relative;
+    margin: 0% auto;
+    width: 80%;
+    height: 100vh;
+    max-width: 1920px;
+  }
+  #hero{
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0% , -50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  #hero_left{
+    min-width: 50%;
+  }
+  #hero_left .elem{
+    height: 8vw;
+    overflow: hidden;
+  }
+  
+  #hero_left .elem h1{
+    font-family: kajiro;
+    line-height: .9;
+    color: white;
+    font-weight: 100;
+    font-size: 10vw;
+  }
+  #hero_right{
+    min-width: 25%;
+    /* background-color: aqua; */
+  }
+  #hero_left button{
+    pointer-events: all;
+    padding: .5vw 3vw;
+    margin-top: 2vw;
+    font-size: 2vw;
+    font-family: kajiro;
+    background-color: aliceblue;
+  }

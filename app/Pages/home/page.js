@@ -21,7 +21,7 @@ const Home = () => {
           whileInView={{opacity:1,y:0}}
           transition={{ duration: 1, ease: easeInOut }}
         >
-          <Image src={Model} layout="fill" alt="" />
+          <Image src={Model.src} fill={true} quality={50} priority={true} alt="" />
         </motion.div>
         <motion.div
           id="main-text-center"

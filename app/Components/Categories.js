@@ -21,7 +21,7 @@ const Categories = () => {
           whileInView={{opacity:1}}
           transition={{duration:0.4 , ease:easeInOut}}
         >
-        <Image src={model} layout="fill" alt=""/>
+        <Image src={model.src} fill={true} quality={50} priority={true} alt="img"/>
         </motion.div>
         <Link href={"/Pages/Shop_Page"}>
         <motion.div id={Styles.categories_page_pin_img} className={Styles.img_1}

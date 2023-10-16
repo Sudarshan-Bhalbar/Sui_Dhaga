@@ -6,7 +6,7 @@ import { useState } from "react";
 import Images from "@/app/Components/Images";
 import Img1 from "@/app/images/model2.svg";
 import Styles from "@/app/Styles/shoppage.module.css";
-import { AnimatePresence, animate } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { easeInOut, motion, stagger } from "framer-motion";
 import Link from "next/link";
 import AnimatedText from "./AnimatedText";
@@ -89,7 +89,7 @@ const Shop = () => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: easeInOut }}
           >
-            <Image src={Img1} layout="fill" alt="img" />
+            <Image src={Img1} fill={true} quality={50} priority={true} alt="img" />
           </motion.div>
           <motion.div
             id={Styles.shop_text}
