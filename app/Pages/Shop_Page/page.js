@@ -2,12 +2,93 @@
 import { Carousel } from "@material-tailwind/react";
 import Styles from "./style.module.css";
 import Image from "next/image";
+import { FaHeart } from "react-icons/fa";
+import { CgShoppingCart } from "react-icons/cg";
+import InfoSider from "@/app/Components/InfoSider";
 import bgImage1 from "../../images/IMG_7564.JPG";
 import bgImage2 from "../../images/IMG_7565.JPG";
 import bgImage3 from "../../images/IMG_7566.JPG";
 import bgImage4 from "../../images/IMG_7567.JPG";
 import bgImage5 from "../../images/IMG_7568.JPG";
+import Images from "@/app/Components/Images";
+import { AnimatePresence } from "framer-motion";
+import { easeInOut, motion, stagger } from "framer-motion";
+import { useState } from "react";
+
+const ArrivalsContainerVariant = {
+  hidden: { y: 200, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
+const item = {
+  hidden: { y: 200, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    scale: 1,
+  },
+};
 const ShopPage = () => {
+  const [bgColors, setBgColors] = useState({
+    tShirt: "bg-white",
+    dresses: "",
+    shrugs: "",
+    jackets: "",
+  });
+  const [likes, setLikes] = useState(Array(8).fill(false));
+  const [ItemImageSrc, setItemImageSrc] = useState(
+    Images.map((e) => e.ItemImageSrc[0])
+  );
+  const [isSiderOpen, setIsSiderOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const Clicked = (key) => {
+    setBgColors((prevColors) => ({
+      tShirt: "",
+      dresses: "",
+      shrugs: "",
+      jackets: "",
+      [key]: "bg-white",
+    }));
+  };
+
+  const toggleSider = () => {
+    if (isSiderOpen) {
+      // Sidebar is open, so enable scrolling
+      document.body.style.overflow = "auto";
+    } else {
+      // Sidebar is closed, so disable scrolling
+      document.body.style.overflow = "hidden";
+    }
+    setIsSiderOpen(!isSiderOpen);
+  };
+
+  const handleMouseOver = (index) => {
+    const newItemImageSrc = [...ItemImageSrc];
+    newItemImageSrc[index] = Images[index].ItemImageSrc[1];
+    setItemImageSrc(newItemImageSrc);
+  };
+
+  const handleMouseOut = (index) => {
+    const newItemImageSrc = [...ItemImageSrc];
+    newItemImageSrc[index] = Images[index].ItemImageSrc[0];
+    setItemImageSrc(newItemImageSrc);
+  };
+
+  const handleClick = (index) => {
+    const newLikes = [...likes];
+    newLikes[index] = !newLikes[index];
+    setLikes(newLikes);
+  };
+
+  const handleElementClick = (index) => {
+    setSelectedItem(Images[index]);
+    // console.log(Images[index]);
+    toggleSider();
+  };
+
   return (
     <>
       <div className=" w-screen h-screen pl-16" id={Styles.landingpage}>
@@ -39,7 +120,12 @@ const ShopPage = () => {
                 <div id={Styles.hero}>
                   <div id={Styles.hero_left}>
                     <div className={Styles.elem}>
-                      <h1>Browse, <span className=" px-4 py-7 bg-white text-black">Click</span></h1>
+                      <h1>
+                        Browse,{" "}
+                        <span className=" px-4 py-7 bg-white text-black">
+                          Click
+                        </span>
+                      </h1>
                     </div>
                     <div className={Styles.elem}>
                       <h1>Shop-</h1>
@@ -144,10 +230,185 @@ const ShopPage = () => {
           </div>
         </Carousel>
       </div>
-      <div className=" w-screen h-screen pl-16">
-
+      <div className=" w-screen  pl-24 pr-8 py-8 flex flex-col gap-48">
+        <div id={Styles.women_section} className="w-full h-full flex">
+          <div id="div" className="w-1/5 h-full">
+            <div
+              id="div"
+              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center bg-indigo-200`}
+            >
+              Women Fashion
+            </div>
+            <div
+              id="div"
+              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center ${bgColors.tShirt}`}
+              onClick={() => Clicked("tShirt")}
+            >
+              Women T-Shirt
+            </div>
+            <div
+              id="div"
+              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center ${bgColors.dresses}`}
+              onClick={() => Clicked("dresses")}
+            >
+              Dresses
+            </div>
+            <div
+              id="div"
+              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center ${bgColors.shrugs}`}
+              onClick={() => Clicked("shrugs")}
+            >
+              Shrugs
+            </div>
+            <div
+              id="div"
+              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center ${bgColors.jackets}`}
+              onClick={() => Clicked("jackets")}
+            >
+              Jackets
+            </div>
+          </div>
+          <div id="div" className="w-full h-full px-10 py-0   overflow-y-scroll overflow-x-hidden ">
+            <div class="grid grid-cols-4 gap-10">
+              {/* <!-- Card 1 --> */}
+              {Images.map((e, index) => {
+            return (
+              <motion.div
+                variants={item}
+                initial="hidden"
+                whileInView="visible"
+                transition={{delay:0.1*index,duration:0.5,ease:easeInOut}}
+                id={Styles.shop_elements}
+                key={index}
+                class="bg-white h-64 rounded-lg shadow-lg"
+                onClick={() => handleElementClick(index)}
+              >
+                <FaHeart
+                  id={Styles.heart}
+                  onClick={() => handleClick(index)}
+                  style={{
+                    color: likes[index] ? "#ff00008e" : "#a2a2d2",
+                  }}
+                />
+                <motion.div
+                  id={Styles.image_container}
+                  onHoverStart={() => handleMouseOver(index)}
+                  onHoverEnd={() => handleMouseOut(index)}
+                >
+                  <Image
+                    src={ItemImageSrc[index]}
+                    alt="item_img"
+                    layout="fill"
+                    className="image-scroller"
+                  />
+                </motion.div>
+              </motion.div>
+            );
+          })}
+            </div>
+          </div>
+        </div>
+        <div id={Styles.women_section} className="w-full h-full flex">
+          <div id="div" className="w-1/5 h-full">
+            <div
+              id="div"
+              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center bg-indigo-200`}
+            >
+              Women Fashion
+            </div>
+            <div
+              id="div"
+              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center ${bgColors.tShirt}`}
+              onClick={() => Clicked("tShirt")}
+            >
+              Women T-Shirt
+            </div>
+            <div
+              id="div"
+              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center ${bgColors.dresses}`}
+              onClick={() => Clicked("dresses")}
+            >
+              Dresses
+            </div>
+            <div
+              id="div"
+              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center ${bgColors.shrugs}`}
+              onClick={() => Clicked("shrugs")}
+            >
+              Shrugs
+            </div>
+            <motion.div
+              variants={item}
+              initial="hidden"
+              whileInView="visible"
+              transition={{delay:0.1,duration:0.5,ease:easeInOut}}
+              id="div"
+              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center ${bgColors.jackets}`}
+              onClick={() => Clicked("jackets")}
+            >
+              Jackets
+            </motion.div>
+          </div>
+          <div id="div" className="w-full h-full px-10 py-0   overflow-y-scroll overflow-x-hidden ">
+            <div class="grid grid-cols-4 gap-10">
+              {/* <!-- Card 1 --> */}
+              {Images.map((e, index) => {
+            return (
+              <motion.div
+                variants={item}
+                initial="hidden"
+                whileInView="visible"
+                transition={{delay:0.1*index,duration:0.5,ease:easeInOut}}
+                id={Styles.shop_elements}
+                key={index}
+                class="bg-white h-64 rounded-lg shadow-lg"
+                onClick={() => handleElementClick(index)}
+              >
+                <FaHeart
+                  id={Styles.heart}
+                  onClick={() => handleClick(index)}
+                  style={{
+                    color: likes[index] ? "#ff00008e" : "#a2a2d2",
+                  }}
+                />
+                <motion.div
+                  id={Styles.image_container}
+                  onHoverStart={() => handleMouseOver(index)}
+                  onHoverEnd={() => handleMouseOut(index)}
+                >
+                  <Image
+                    src={ItemImageSrc[index]}
+                    alt="item_img"
+                    layout="fill"
+                    className="image-scroller"
+                  />
+                </motion.div>
+              </motion.div>
+            );
+          })}
+            </div>
+          </div>
+        </div>
       </div>
 
+      <AnimatePresence>
+        {isSiderOpen && (
+          <motion.div
+            className="sidebar"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            style={{ backgroundColor: "transparent" }}
+            transition={{
+              duration: 0.5,
+              ease: easeInOut,
+              delayChildren: stagger(0.5),
+            }}
+          >
+            <InfoSider toggleSider={toggleSider} selectedItem={selectedItem} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
