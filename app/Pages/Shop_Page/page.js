@@ -3,7 +3,6 @@ import { Carousel } from "@material-tailwind/react";
 import Styles from "./style.module.css";
 import Image from "next/image";
 import { FaHeart } from "react-icons/fa";
-import { CgShoppingCart } from "react-icons/cg";
 import InfoSider from "@/app/Components/InfoSider";
 import bgImage1 from "../../images/IMG_7564.JPG";
 import bgImage2 from "../../images/IMG_7565.JPG";
@@ -15,28 +14,8 @@ import { AnimatePresence } from "framer-motion";
 import { easeInOut, motion, stagger } from "framer-motion";
 import { useState } from "react";
 
-const ArrivalsContainerVariant = {
-  hidden: { y: 200, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
-};
-const item = {
-  hidden: { y: 200, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    scale: 1,
-  },
-};
+
 const ShopPage = () => {
-  const [bgColors, setBgColors] = useState({
-    tShirt: "bg-white",
-    dresses: "",
-    shrugs: "",
-    jackets: "",
-  });
   const [likes, setLikes] = useState(Array(8).fill(false));
   const [ItemImageSrc, setItemImageSrc] = useState(
     Images.map((e) => e.ItemImageSrc[0])
@@ -44,15 +23,7 @@ const ShopPage = () => {
   const [isSiderOpen, setIsSiderOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
 
-  const Clicked = (key) => {
-    setBgColors((prevColors) => ({
-      tShirt: "",
-      dresses: "",
-      shrugs: "",
-      jackets: "",
-      [key]: "bg-white",
-    }));
-  };
+ 
 
   const toggleSider = () => {
     if (isSiderOpen) {
@@ -85,7 +56,6 @@ const ShopPage = () => {
 
   const handleElementClick = (index) => {
     setSelectedItem(Images[index]);
-    // console.log(Images[index]);
     toggleSider();
   };
 
@@ -133,7 +103,7 @@ const ShopPage = () => {
                     <div className={Styles.elem}>
                       <h1>It's That Easy!</h1>
                     </div>
-                    <button id={Styles.button}>Explore Now</button>
+                    <button id={Styles.button} >Explore Now</button>
                   </div>
                   <div id={Styles.hero_right}></div>
                 </div>
@@ -232,7 +202,7 @@ const ShopPage = () => {
       </div>
       <div className=" w-screen  pl-24 pr-8 py-8 flex flex-col gap-20">
         <div id={Styles.women_section} className="w-full h-full flex">
-        <div
+          <div
             id="div"
             className=" w-20 bg-palette flex justify-center items-center"
           >
@@ -247,33 +217,38 @@ const ShopPage = () => {
             <div class="grid grid-cols-4 gap-10">
               {/* <!-- Card 1 --> */}
               {Images.map((e, index) => {
+                const { Itemtype } = { ...e };
                 return (
-                  <div
-                    id={Styles.shop_elements}
-                    key={index}
-                    class="bg-white h-64 rounded-lg shadow-lg"
-                    onClick={() => handleElementClick(index)}
-                  >
-                    <FaHeart
-                      id={Styles.heart}
-                      onClick={() => handleClick(index)}
-                      style={{
-                        color: likes[index] ? "#ff00008e" : "#a2a2d2",
-                      }}
-                    />
-                    <motion.div
-                      id={Styles.image_container}
-                      onHoverStart={() => handleMouseOver(index)}
-                      onHoverEnd={() => handleMouseOut(index)}
-                    >
-                      <Image
-                        src={ItemImageSrc[index]}
-                        alt="item_img"
-                        layout="fill"
-                        className="image-scroller"
-                      />
-                    </motion.div>
-                  </div>
+                  <>
+                    {Itemtype === "Women" ? (
+                      <div
+                        id={Styles.shop_elements}
+                        key={index}
+                        className="bg-white h-64 rounded-lg shadow-lg"
+                        onClick={() => handleElementClick(index)}
+                      >
+                        <FaHeart
+                          id={Styles.heart}
+                          onClick={() => handleClick(index)}
+                          style={{
+                            color: likes[index] ? "#ff00008e" : "#a2a2d2",
+                          }}
+                        />
+                        <motion.div
+                          id={Styles.image_container}
+                          onHoverStart={() => handleMouseOver(index)}
+                          onHoverEnd={() => handleMouseOut(index)}
+                        >
+                          <Image
+                            src={ItemImageSrc[index]}
+                            alt="item_img"
+                            layout="fill"
+                            className="image-scroller"
+                          />
+                        </motion.div>
+                      </div>
+                    ) : null}
+                  </>
                 );
               })}
             </div>
@@ -295,33 +270,38 @@ const ShopPage = () => {
             <div class="grid grid-cols-4 gap-14">
               {/* <!-- Card 1 --> */}
               {Images.map((e, index) => {
+                const {  Itemtype } = { ...e };
                 return (
-                  <div
-                    id={Styles.shop_elements}
-                    key={index}
-                    class="bg-white h-64 rounded-lg shadow-lg"
-                    onClick={() => handleElementClick(index)}
-                  >
-                    <FaHeart
-                      id={Styles.heart}
-                      onClick={() => handleClick(index)}
-                      style={{
-                        color: likes[index] ? "#ff00008e" : "#a2a2d2",
-                      }}
-                    />
-                    <motion.div
-                      id={Styles.image_container}
-                      onHoverStart={() => handleMouseOver(index)}
-                      onHoverEnd={() => handleMouseOut(index)}
-                    >
-                      <Image
-                        src={ItemImageSrc[index]}
-                        alt="item_img"
-                        layout="fill"
-                        className="image-scroller"
-                      />
-                    </motion.div>
-                  </div>
+                  <>
+                    {Itemtype === "Men" ? (
+                      <div
+                        id={Styles.shop_elements}
+                        key={index}
+                        className="bg-white h-64 rounded-lg shadow-lg"
+                        onClick={() => handleElementClick(index)}
+                      >
+                        <FaHeart
+                          id={Styles.heart}
+                          onClick={() => handleClick(index)}
+                          style={{
+                            color: likes[index] ? "#ff00008e" : "#a2a2d2",
+                          }}
+                        />
+                        <motion.div
+                          id={Styles.image_container}
+                          onHoverStart={() => handleMouseOver(index)}
+                          onHoverEnd={() => handleMouseOut(index)}
+                        >
+                          <Image
+                            src={ItemImageSrc[index]}
+                            alt="item_img"
+                            layout="fill"
+                            className="image-scroller"
+                          />
+                        </motion.div>
+                      </div>
+                    ) : null}
+                  </>
                 );
               })}
             </div>

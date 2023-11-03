@@ -136,41 +136,40 @@ const Shop = () => {
           transition={{delayChildren:0.3 , staggerChildren:0.2}}
         >
           {Images.map((e, index) => {
-            return (
-              <motion.div
-                variants={item}
-                initial="hidden"
-                whileInView="visible"
-                transition={{delay:0.1*index,duration:0.5,ease:easeInOut}}
-                id={Styles.shop_elements}
-                key={index}
-                onClick={() => handleElementClick(index)}
-              >
-                <FaHeart
-                  id={Styles.heart}
-                  onClick={() => handleClick(index)}
-                  style={{
-                    color: likes[index] ? "#ff00008e" : "#a2a2d2",
-                  }}
-                />
-                <motion.div
-                  id={Styles.image_container}
-                  onHoverStart={() => handleMouseOver(index)}
-                  onHoverEnd={() => handleMouseOut(index)}
-                >
-                  <Image
-                    src={ItemImageSrc[index]}
-                    alt="item_img"
-                    layout="fill"
-                    className="image-scroller"
-                  />
-                </motion.div>
-                {/* <div id={Styles.cart_btn}>
-                    <CgShoppingCart id={Styles.cart_icon}/>
-                  </div> */}
-              </motion.div>
-            );
-          })}
+                const { Itemtype } = { ...e };
+                return (
+                  <>
+                    {Itemtype === "Women" ? (
+                      <div
+                        id={Styles.shop_elements}
+                        key={index}
+                        className="bg-white h-64 rounded-lg shadow-lg"
+                        onClick={() => handleElementClick(index)}
+                      >
+                        <FaHeart
+                          id={Styles.heart}
+                          onClick={() => handleClick(index)}
+                          style={{
+                            color: likes[index] ? "#ff00008e" : "#a2a2d2",
+                          }}
+                        />
+                        <motion.div
+                          id={Styles.image_container}
+                          onHoverStart={() => handleMouseOver(index)}
+                          onHoverEnd={() => handleMouseOut(index)}
+                        >
+                          <Image
+                            src={ItemImageSrc[index]}
+                            alt="item_img"
+                            layout="fill"
+                            className="image-scroller"
+                          />
+                        </motion.div>
+                      </div>
+                    ) : null}
+                  </>
+                );
+              })}
         </motion.div>
       </motion.div>
       <AnimatePresence>

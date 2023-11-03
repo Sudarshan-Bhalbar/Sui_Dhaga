@@ -71,6 +71,102 @@ const Items = [
       "https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2F49%2Fc9%2F49c9883c6a307e945c3adebad7d3708a784505d7.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bladies_tops_printed_tshirts%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D",
     ],
   },
+  {
+    Id: 7,
+    ItemName: "Jersey trousers",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    Itemtype: "Men",
+    ItemSize: ["SM", "M", "L", "XL", "XXL", "XXXL"],
+    ItemPrice: "Rs. 1,499.00",
+    ItemImageSrc: [
+      "https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1695141106/770374_ZAM6S_4240_002_100_0000_Light-Cotton-jersey-jacket-with-Web.jpg",
+      "https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1695141106/770374_ZAM6S_4240_001_100_0000_Light-Cotton-jersey-jacket-with-Web.jpg",
+    ],
+  },
+  {
+    Id: 8,
+    ItemName: "Reversible denim and GG flannel shirt",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    Itemtype: "Men",
+    ItemSize: ["SM", "M", "L", "XL", "XXL", "XXXL"],
+    ItemPrice: "Rs. 4,400.00",
+    ItemImageSrc: [
+      "https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1695140222/766142_XDCRJ_1043_002_100_0000_Light-Reversible-denim-and-GG-flannel-shirt.jpg",
+      "https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1695140220/766142_XDCRJ_1043_001_100_0000_Light-Reversible-denim-and-GG-flannel-shirt.jpg",
+    ],
+  },
+  {
+    Id: 9,
+    ItemName: "Wool jacket with Web",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    Itemtype: "Men",
+    ItemSize: ["SM", "M", "L", "XL", "XXL", "XXXL"],
+    ItemPrice: "Rs. 3,500.00",
+    ItemImageSrc: [
+      "https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1695140142/762525_ZAPBF_4669_002_100_0000_Light-Wool-jacket-with-Web.jpg",
+      "https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1695140141/762525_ZAPBF_4669_001_100_0000_Light-Wool-jacket-with-Web.jpg",
+    ],
+  },
+  {
+    Id: 10,
+    ItemName: "GG wool jacquard sweater",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    Itemtype: "Men",
+    ItemSize: ["SM", "M", "L", "XL", "XXL", "XXXL"],
+    ItemPrice: "Rs. 1,350.00",
+    ItemImageSrc: [
+      "https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1695058299/692900_XKCC5_1064_002_100_0000_Light-GG-wool-jacquard-sweater.jpg",
+      "https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1695058298/692900_XKCC5_1064_001_100_0000_Light-GG-wool-jacquard-sweater.jpg",
+    ],
+  },
+  {
+    Id: 11,
+    ItemName: "Men's Gucci Blondie ankle boot",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    Itemtype: "Men",
+    ItemSize: [],
+    ItemPrice: "Rs. 1,450.00",
+    ItemImageSrc: [
+      "https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1688401076/757777_06F80_2140_003_100_0000_Light-Mens-Gucci-Blondie-ankle-boot.jpg",
+      "https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1687537886/757777_06F80_2140_001_100_0000_Light-Mens-Gucci-Blondie-ankle-boot.jpg",
+    ],
+  },
+  {
+    Id: 12,
+    ItemName: "Diagonal Interlocking G necklace",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    Itemtype: "Men",
+    ItemSize: [],
+    ItemPrice: "Rs. 420.00",
+    ItemImageSrc: [
+      "https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1695391270/774055_J8400_8106_003_100_0000_Light-Diagonal-Interlocking-G-necklace.jpg",
+      "https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1689183006/774055_J8400_8106_001_100_0000_Light-Diagonal-Interlocking-G-necklace.jpg",
+    ],
+  },
+  {
+    Id: 13,
+    ItemName: "Nylon canvas zip jacket with GG",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    Itemtype: "Men",
+    ItemSize: ["SM", "M", "L", "XL", "XXL", "XXXL"],
+    ItemPrice: "Rs. 2,600.00",
+    ItemImageSrc: [
+      "https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1695141127/770762_ZAPDX_4433_002_100_0000_Light-Nylon-canvas-zip-jacket-with-GG.jpg",
+      "https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1695141126/770762_ZAPDX_4433_001_100_0000_Light-Nylon-canvas-zip-jacket-with-GG.jpg",
+    ],
+  },
+  {
+    Id: 14,
+    ItemName: "Felted wool baseball hat with patch",
+    ItemDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    Itemtype: "Men",
+    ItemSize: [],
+    ItemPrice: "Rs. 490.00",
+    ItemImageSrc: [
+      "https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1696263322/757903_4HA4T_4068_003_100_0000_Light-Felted-wool-baseball-hat-with-patch.jpg",
+      "https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1691426804/757903_4HA4T_4068_001_100_0000_Light-Felted-wool-baseball-hat-with-patch.jpg",
+    ],
+  },
 ];
 
 export default Items;

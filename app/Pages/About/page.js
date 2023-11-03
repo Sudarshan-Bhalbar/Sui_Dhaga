@@ -1,6 +1,6 @@
 // import Styles from "./style.module.css"
 
-import Image from "next/image";
+import Image from "next/image"; 
 import GD from "@/app/images/GD.jpg";
 import person1 from "@/app/images/vinit.jpg";
 import person2 from "@/app/images/Sudarshan.jpeg";
