@@ -230,162 +230,100 @@ const ShopPage = () => {
           </div>
         </Carousel>
       </div>
-      <div className=" w-screen  pl-24 pr-8 py-8 flex flex-col gap-48">
+      <div className=" w-screen  pl-24 pr-8 py-8 flex flex-col gap-20">
         <div id={Styles.women_section} className="w-full h-full flex">
-          <div id="div" className="w-1/5 h-full">
-            <div
-              id="div"
-              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center bg-indigo-200`}
-            >
-              Women Fashion
-            </div>
-            <div
-              id="div"
-              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center ${bgColors.tShirt}`}
-              onClick={() => Clicked("tShirt")}
-            >
-              Women T-Shirt
-            </div>
-            <div
-              id="div"
-              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center ${bgColors.dresses}`}
-              onClick={() => Clicked("dresses")}
-            >
-              Dresses
-            </div>
-            <div
-              id="div"
-              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center ${bgColors.shrugs}`}
-              onClick={() => Clicked("shrugs")}
-            >
-              Shrugs
-            </div>
-            <div
-              id="div"
-              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center ${bgColors.jackets}`}
-              onClick={() => Clicked("jackets")}
-            >
-              Jackets
-            </div>
+        <div
+            id="div"
+            className=" w-20 bg-palette flex justify-center items-center"
+          >
+            <h1 className=" rotate-[-90deg] text-5xl tracking-wide text-gray-100">
+              #WOMEN'SFASHION
+            </h1>
           </div>
-          <div id="div" className="w-full h-full px-10 py-0   overflow-y-scroll overflow-x-hidden ">
+          <div
+            id="div"
+            className="w-full h-full px-10 py-0   overflow-y-auto overflow-x-hidden "
+          >
             <div class="grid grid-cols-4 gap-10">
               {/* <!-- Card 1 --> */}
               {Images.map((e, index) => {
-            return (
-              <motion.div
-                variants={item}
-                initial="hidden"
-                whileInView="visible"
-                transition={{delay:0.1*index,duration:0.5,ease:easeInOut}}
-                id={Styles.shop_elements}
-                key={index}
-                class="bg-white h-64 rounded-lg shadow-lg"
-                onClick={() => handleElementClick(index)}
-              >
-                <FaHeart
-                  id={Styles.heart}
-                  onClick={() => handleClick(index)}
-                  style={{
-                    color: likes[index] ? "#ff00008e" : "#a2a2d2",
-                  }}
-                />
-                <motion.div
-                  id={Styles.image_container}
-                  onHoverStart={() => handleMouseOver(index)}
-                  onHoverEnd={() => handleMouseOut(index)}
-                >
-                  <Image
-                    src={ItemImageSrc[index]}
-                    alt="item_img"
-                    layout="fill"
-                    className="image-scroller"
-                  />
-                </motion.div>
-              </motion.div>
-            );
-          })}
+                return (
+                  <div
+                    id={Styles.shop_elements}
+                    key={index}
+                    class="bg-white h-64 rounded-lg shadow-lg"
+                    onClick={() => handleElementClick(index)}
+                  >
+                    <FaHeart
+                      id={Styles.heart}
+                      onClick={() => handleClick(index)}
+                      style={{
+                        color: likes[index] ? "#ff00008e" : "#a2a2d2",
+                      }}
+                    />
+                    <motion.div
+                      id={Styles.image_container}
+                      onHoverStart={() => handleMouseOver(index)}
+                      onHoverEnd={() => handleMouseOut(index)}
+                    >
+                      <Image
+                        src={ItemImageSrc[index]}
+                        alt="item_img"
+                        layout="fill"
+                        className="image-scroller"
+                      />
+                    </motion.div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
         <div id={Styles.women_section} className="w-full h-full flex">
-          <div id="div" className="w-1/5 h-full">
-            <div
-              id="div"
-              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center bg-indigo-200`}
-            >
-              Women Fashion
-            </div>
-            <div
-              id="div"
-              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center ${bgColors.tShirt}`}
-              onClick={() => Clicked("tShirt")}
-            >
-              Women T-Shirt
-            </div>
-            <div
-              id="div"
-              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center ${bgColors.dresses}`}
-              onClick={() => Clicked("dresses")}
-            >
-              Dresses
-            </div>
-            <div
-              id="div"
-              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center ${bgColors.shrugs}`}
-              onClick={() => Clicked("shrugs")}
-            >
-              Shrugs
-            </div>
-            <motion.div
-              variants={item}
-              initial="hidden"
-              whileInView="visible"
-              transition={{delay:0.1,duration:0.5,ease:easeInOut}}
-              id="div"
-              className={`select-none hover:cursor-pointer w-full h-16 flex px-5 items-center ${bgColors.jackets}`}
-              onClick={() => Clicked("jackets")}
-            >
-              Jackets
-            </motion.div>
+          <div
+            id="div"
+            className=" w-20 bg-palette flex justify-center items-center"
+          >
+            <h1 className=" rotate-[-90deg] text-6xl text-gray-100">
+              #MEN'SFASHION
+            </h1>
           </div>
-          <div id="div" className="w-full h-full px-10 py-0   overflow-y-scroll overflow-x-hidden ">
-            <div class="grid grid-cols-4 gap-10">
+          <div
+            id="div"
+            className="w-full h-full px-5 py-0   overflow-y-auto overflow-x-hidden "
+          >
+            <div class="grid grid-cols-4 gap-14">
               {/* <!-- Card 1 --> */}
               {Images.map((e, index) => {
-            return (
-              <motion.div
-                variants={item}
-                initial="hidden"
-                whileInView="visible"
-                transition={{delay:0.1*index,duration:0.5,ease:easeInOut}}
-                id={Styles.shop_elements}
-                key={index}
-                class="bg-white h-64 rounded-lg shadow-lg"
-                onClick={() => handleElementClick(index)}
-              >
-                <FaHeart
-                  id={Styles.heart}
-                  onClick={() => handleClick(index)}
-                  style={{
-                    color: likes[index] ? "#ff00008e" : "#a2a2d2",
-                  }}
-                />
-                <motion.div
-                  id={Styles.image_container}
-                  onHoverStart={() => handleMouseOver(index)}
-                  onHoverEnd={() => handleMouseOut(index)}
-                >
-                  <Image
-                    src={ItemImageSrc[index]}
-                    alt="item_img"
-                    layout="fill"
-                    className="image-scroller"
-                  />
-                </motion.div>
-              </motion.div>
-            );
-          })}
+                return (
+                  <div
+                    id={Styles.shop_elements}
+                    key={index}
+                    class="bg-white h-64 rounded-lg shadow-lg"
+                    onClick={() => handleElementClick(index)}
+                  >
+                    <FaHeart
+                      id={Styles.heart}
+                      onClick={() => handleClick(index)}
+                      style={{
+                        color: likes[index] ? "#ff00008e" : "#a2a2d2",
+                      }}
+                    />
+                    <motion.div
+                      id={Styles.image_container}
+                      onHoverStart={() => handleMouseOver(index)}
+                      onHoverEnd={() => handleMouseOut(index)}
+                    >
+                      <Image
+                        src={ItemImageSrc[index]}
+                        alt="item_img"
+                        layout="fill"
+                        className="image-scroller"
+                      />
+                    </motion.div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
