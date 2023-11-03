@@ -5,8 +5,8 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <>
-      <footer className="relative h-60 bg-palette pt-8 ml-16 pb-6">
-        <div className="container h-full mx-auto px-4 flex justify-between flex-col">
+      <footer className="relative h-60 bg-palette pt-8 ml-16 pb-6 ">
+        <div className="container h-full mx-auto px-4 flex justify-between flex-col px-40 pt-5">
           <div className="flex flex-wrap text-left lg:text-left">
             <div className="w-full lg:w-6/12 px-4">
               <h4 className="text-3xl font-extrabold text-white">
