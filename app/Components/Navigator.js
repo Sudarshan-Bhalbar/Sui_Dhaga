@@ -43,7 +43,7 @@ const Navigator = () => {
     >
       <div
         id={S.links}
-        className="flex flex-col w-full h-full justify-center hover:items-start gap-5 items-center p-1"
+        className="flex flex-col w-full h-full justify-center hover:items-start items-center px-1"
       >
         <div
           className="flex justify-between gap-5 cursor-default items-center w-full h-1/6"
@@ -131,12 +131,7 @@ const Navigator = () => {
                   }}
                 />
               </Link>
-              <div
-                className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-cyan-500 bg-gray-900 rounded-full -top-2 -right-2"
-                id={S.badge}
-              >
-                {/* {value} */} 10
-              </div>
+              {/*  */}
             </div>
             <div
               id={S.display}
@@ -151,46 +146,6 @@ const Navigator = () => {
                   }}
                 >
                   Shop
-                </h1>
-              </Link>
-            </div>
-          </div>
-          <div
-            id={S.nav_links_icon}
-            className=" flex justify-center items-center  "
-            style={{
-              color: `${
-                scrollPosition > windowHeight
-                  ? "rgba(255, 255, 255, 0.75)"
-                  : "rgba(95, 96, 185, 0.52)"
-              }`,
-            }}
-          >
-            <div className=" flex justify-center items-center" id={S.btn}>
-              <Link href={"/Pages/Categories"}>
-                <BiCategoryAlt
-                  style={{
-                    fontSize: "2rem",
-                    color: `${
-                      pathname === "/Pages/Categories" ? "#E95D5A" : " "
-                    }`,
-                  }}
-                />
-              </Link>
-            </div>
-            <div
-              id={S.display}
-              className=" flex justify-start items-center s_nav w-3/4"
-            >
-              <Link href={"/Pages/Categories"}>
-                <h1
-                  style={{
-                    color: `${
-                      pathname === "/Pages/Categories" ? "#E95D5A" : " "
-                    }`,
-                  }}
-                >
-                  Categories
                 </h1>
               </Link>
             </div>
