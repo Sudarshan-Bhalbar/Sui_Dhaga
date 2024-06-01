@@ -66,7 +66,7 @@ const Navigator = () => {
             id={S.display}
             className=" w-3/4 h-full flex justify-start items-center"
           >
-            <h1 id={S.font}>SUI DHAGA</h1>
+            <h1 id={S.font}>Fashion Wear's</h1>
           </div>
         </div>
 
